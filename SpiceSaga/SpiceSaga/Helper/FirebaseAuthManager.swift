@@ -21,7 +21,6 @@ class FirebaseAuthManager {
                     failure()
                 }
             }
-            
         }
     }
     

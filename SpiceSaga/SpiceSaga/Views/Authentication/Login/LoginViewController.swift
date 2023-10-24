@@ -8,7 +8,7 @@
 import UIKit
 
 class LoginViewController: UIViewController {
-
+    
     @IBOutlet private var textEmail: UITextField!
     @IBOutlet private var textPassword: UITextField!
     
@@ -16,8 +16,13 @@ class LoginViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        textEmail.text = ""
+        textPassword.text = ""
     }
     
     @IBAction private func didTapOnSignUp() {
@@ -25,15 +30,21 @@ class LoginViewController: UIViewController {
             navigationController?.pushViewController(signUpVc, animated: true)
         }
     }
-
+    
     @IBAction private func didTapOnSignIn() {
-        guard let email = textEmail.text , let password = textPassword.text else { return  }        
+        guard let email = textEmail.text , let password = textPassword.text else { return  }
+        if !ValidateClass.isValidEmail(for: textEmail.text ?? "") {
+            self.alertPresent(withTitle: "Invalid Email", message: "Please enter valid email")
+        }
+        
+        if !ValidateClass.isPasswordValid(for: textPassword.text ?? "") {
+            self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password")
+        }
         viewModel.login(email: email, password: password) {
             self.moveToHome()
         } failure: {
-            
+            self.alertPresent(withTitle: "Opps..", message: "Invalid email or password")
         }
-
     }
     
     private func moveToHome() {

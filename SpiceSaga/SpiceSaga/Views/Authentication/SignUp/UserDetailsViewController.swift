@@ -8,10 +8,11 @@
 import UIKit
 
 class UserDetailsViewController: UIViewController {
-
+    
     @IBOutlet private var buttonCountry: UIButton!
     @IBOutlet private var buttomProfileImage: UIButton!
     @IBOutlet private var labelUsername: UILabel!
+    var isImageSelected: Bool = false
     
     var textEmail: String?
     var textName: String?
@@ -20,7 +21,7 @@ class UserDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
         prepareView()
     }
@@ -34,17 +35,27 @@ class UserDetailsViewController: UIViewController {
     @IBAction private func didTapOnBack() {
         navigationController?.popViewController(animated: true)
     }
-
+    
     @IBAction private func didTapOnSubmit() {
-        guard let email = textEmail, let name = textName, let password = textPassword, let countryName: String = countrySelected else { return  }
-        FirebaseAuthManager.shared.createUserAccount(email: email, password: password) {
-            if let image = self.buttomProfileImage.imageView?.image?.pngData() {
-                FirebaseRealTimeStorage.shared.uploadMedia(name: name, country: countryName, image: image) { url in
-                    DispatchQueue.main.async {
-                        self.moveToHome()
+        let imgSystem = UIImage(systemName: "person.crop.circle.fill.badge.plus")
+        
+        if isImageSelected {
+            if !ValidateClass.isValidCountry(for: "\(buttonCountry.titleLabel?.text ?? "")") {
+                alertPresent(withTitle: "Wait", message: "Please select country")
+            } else {
+                guard let email = textEmail, let name = textName, let password = textPassword, let countryName: String = countrySelected else { return  }
+                FirebaseAuthManager.shared.createUserAccount(email: email, password: password) {
+                    if let image = self.buttomProfileImage.imageView?.image?.pngData() {
+                        FirebaseRealTimeStorage.shared.uploadMedia(name: name, country: countryName, image: image) { url in
+                            DispatchQueue.main.async {
+                                self.moveToHome()
+                            }
+                        }
                     }
                 }
             }
+        } else {
+            alertPresent(withTitle: "Wait", message: "Please add image")
         }
     }
     
@@ -85,8 +96,11 @@ extension UserDetailsViewController: UIImagePickerControllerDelegate & UINavigat
         if let image: UIImage = info[UIImagePickerController.InfoKey.originalImage] as? UIImage {
             self.buttomProfileImage.setImage(image, for: .normal)
         }
+        isImageSelected = true
+        picker.dismiss(animated: true)
     }
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         picker.dismiss(animated: true)
     }
+    
 }

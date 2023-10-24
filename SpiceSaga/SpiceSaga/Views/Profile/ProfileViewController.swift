@@ -17,7 +17,9 @@ class ProfileViewController: UIViewController {
     
     @IBAction private func didTapOnLogout() {
         FirebaseAuthManager.shared.logoutUser()
-        self.tabBarController?.navigationController?.popViewController(animated: true)
+       // self.tabBarController?.navigationController?.popViewController(animated: true)
+        if let rootViewController = self.navigationController?.viewControllers[1] {
+            self.navigationController?.popToViewController(rootViewController, animated: true)
+        }
     }
-
 }

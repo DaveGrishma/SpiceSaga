@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qpp-hh-c6G">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="22155" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Qpp-hh-c6G">
     <device id="retina6_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22131"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
@@ -876,20 +876,27 @@
                                 </constraints>
                                 <color key="tintColor" name="AppTint"/>
                                 <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
-                                <state key="normal" image="power.circle.fill" catalog="system"/>
                                 <connections>
                                     <action selector="didTapOnLogout" destination="MvJ-5Y-h9g" eventType="touchUpInside" id="LWk-Sw-SFH"/>
                                 </connections>
                             </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="power.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="1iV-rE-4lT">
+                                <rect key="frame" x="334" y="64" width="40" height="38.666666666666671"/>
+                                <color key="tintColor" name="AppTint"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="ion-Jd-iXz"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="1iV-rE-4lT" firstAttribute="top" secondItem="QKf-Zv-vnx" secondAttribute="top" id="CuZ-pk-X1s"/>
+                            <constraint firstItem="1iV-rE-4lT" firstAttribute="bottom" secondItem="QKf-Zv-vnx" secondAttribute="bottom" id="PQh-Mm-hPC"/>
                             <constraint firstItem="QKf-Zv-vnx" firstAttribute="top" secondItem="ion-Jd-iXz" secondAttribute="top" constant="16" id="S9P-OB-End"/>
+                            <constraint firstItem="1iV-rE-4lT" firstAttribute="leading" secondItem="QKf-Zv-vnx" secondAttribute="leading" id="XE6-g1-Wzy"/>
+                            <constraint firstItem="1iV-rE-4lT" firstAttribute="trailing" secondItem="QKf-Zv-vnx" secondAttribute="trailing" id="aYS-j4-nwI"/>
                             <constraint firstItem="ion-Jd-iXz" firstAttribute="trailing" secondItem="QKf-Zv-vnx" secondAttribute="trailing" constant="16" id="dP4-rD-dRC"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Profile" id="XgC-v5-R3W">
+                    <tabBarItem key="tabBarItem" title="Profile" image="person.crop.circle.fill" catalog="system" id="XgC-v5-R3W">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewController>
@@ -907,7 +914,7 @@
                         <viewLayoutGuide key="safeArea" id="0cs-BV-N28"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Recipe Book" id="gl8-aG-5a8">
+                    <tabBarItem key="tabBarItem" title="Recipe Book" image="book.fill" catalog="system" id="gl8-aG-5a8">
                         <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBarItem>
                 </viewController>
@@ -923,6 +930,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" name="AppTint"/>
+                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <color key="barTintColor" systemColor="labelColor"/>
                         <color key="selectedImageTintColor" systemColor="labelColor"/>
                     </tabBar>
@@ -958,6 +966,8 @@
         <image name="Logo" width="178" height="95"/>
         <image name="arrow.left" catalog="system" width="128" height="95"/>
         <image name="backgroundImage" width="375" height="812"/>
+        <image name="book.fill" catalog="system" width="128" height="95"/>
+        <image name="person.crop.circle.fill" catalog="system" width="128" height="123"/>
         <image name="person.crop.circle.fill.badge.plus" catalog="system" width="128" height="114"/>
         <image name="power.circle.fill" catalog="system" width="128" height="123"/>
         <namedColor name="AppTint">

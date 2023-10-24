@@ -8,28 +8,17 @@
 import UIKit
 
 class SignUpViewController: UIViewController {
-
+    
     @IBOutlet private var textName: UITextField!
     @IBOutlet private var textEmail: UITextField!
     @IBOutlet private var textPassword: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
     @IBAction private func didTapOnback() {
         moveToLogin()
     }
@@ -39,6 +28,23 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction private func didTapOnNext() {
+        
+        if !ValidateClass.isValidUsername(for: textName.text ?? "") {
+            self.alertPresent(withTitle: "Invalid Username", message: "Please enter valid username")
+        }
+        
+        if !ValidateClass.isValidUsername(for: textName.text ?? "") {
+            self.alertPresent(withTitle: "Invalid Username", message: "Please enter valid username")
+        }
+        
+        if !ValidateClass.isValidEmail(for: textEmail.text ?? "") {
+            self.alertPresent(withTitle: "Invalid Email", message: "Please enter valid email")
+        }
+        
+        if !ValidateClass.isPasswordValid(for: textPassword.text ?? "") {
+            self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password")
+        }
+        
         if let userDetailsVc = SpiceSagaStoryBoards.main.getViewController(UserDetailsViewController.self) {
             userDetailsVc.textName = textName.text
             userDetailsVc.textEmail = textEmail.text
@@ -50,6 +56,5 @@ class SignUpViewController: UIViewController {
     private func moveToLogin() {
         navigationController?.popViewController(animated: true)
     }
-    
     
 }
