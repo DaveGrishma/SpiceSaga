@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+
+class LoginViewModel {
+    
+    func login(email: String, password: String,success: @escaping() -> Void,failure: @escaping() -> Void) {
+        FirebaseAuthManager.shared.loginUser(email: email, password: password) {
+            success()
+        } failure: {
+            failure()
+        }
+
+    }
+}

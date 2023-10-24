@@ -9,6 +9,11 @@ import UIKit
 
 class LoginViewController: UIViewController {
 
+    @IBOutlet private var textEmail: UITextField!
+    @IBOutlet private var textPassword: UITextField!
+    
+    lazy var viewModel: LoginViewModel = LoginViewModel()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -21,4 +26,20 @@ class LoginViewController: UIViewController {
         }
     }
 
+    @IBAction private func didTapOnSignIn() {
+        guard let email = textEmail.text , let password = textPassword.text else { return  }        
+        viewModel.login(email: email, password: password) {
+            self.moveToHome()
+        } failure: {
+            
+        }
+
+    }
+    
+    private func moveToHome() {
+        if let homeVc = SpiceSagaStoryBoards.main.getViewController(HomeTabViewController.self) {
+            
+            navigationController?.pushViewController(homeVc, animated: true)
+        }
+    }
 }

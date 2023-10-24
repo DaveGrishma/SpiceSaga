@@ -9,11 +9,26 @@ import UIKit
 
 class SignUpViewController: UIViewController {
 
+    @IBOutlet private var textName: UITextField!
+    @IBOutlet private var textEmail: UITextField!
+    @IBOutlet private var textPassword: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
+    
+
+    /*
+    // MARK: - Navigation
+
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Get the new view controller using segue.destination.
+        // Pass the selected object to the new view controller.
+    }
+    */
 
     @IBAction private func didTapOnback() {
         moveToLogin()
@@ -24,16 +39,17 @@ class SignUpViewController: UIViewController {
     }
     
     @IBAction private func didTapOnNext() {
-        moveToSignUp2()
+        if let userDetailsVc = SpiceSagaStoryBoards.main.getViewController(UserDetailsViewController.self) {
+            userDetailsVc.textName = textName.text
+            userDetailsVc.textEmail = textEmail.text
+            userDetailsVc.textPassword = textPassword.text
+            navigationController?.pushViewController(userDetailsVc, animated: true)
+        }
     }
     
     private func moveToLogin() {
         navigationController?.popViewController(animated: true)
     }
     
-    private func moveToSignUp2() {
-        if let signUpVc2 = SpiceSagaStoryBoards.main.getViewController(SignupVC2.self) {
-            navigationController?.pushViewController(signUpVc2, animated: true)
-        }
-    }
+    
 }
