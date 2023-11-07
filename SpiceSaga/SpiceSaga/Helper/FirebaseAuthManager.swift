@@ -22,6 +22,7 @@ class FirebaseAuthManager {
                 }
             }
         }
+        
     }
     
     func createUserAccount(email: String,password: String,complition: @escaping() -> Void) {
@@ -38,5 +39,9 @@ class FirebaseAuthManager {
         } catch {
             print(error.localizedDescription)
         }
+    }
+    
+    var userID: String {
+        Auth.auth().currentUser?.uid ?? ""
     }
 }

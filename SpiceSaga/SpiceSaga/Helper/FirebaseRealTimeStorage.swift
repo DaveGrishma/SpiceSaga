@@ -36,5 +36,21 @@ class FirebaseRealTimeStorage {
                 self.setProfile(name: name, country: country)
             }
         }
+        
+    }
+    
+    func uploadImage(name: String,image: Data,completion: @escaping (_ url: String?) -> Void) {
+        let name = UUID().uuidString + ".png"
+        let storageRef = Storage.storage().reference().child(name)
+        storageRef.putData(image, metadata: nil) { (metadata, error) in
+            if error != nil {
+                print("error")
+                completion(nil)
+            } else {
+                if let path = metadata?.path {
+                    completion(path)
+                }
+            }
+        }
     }
 }
