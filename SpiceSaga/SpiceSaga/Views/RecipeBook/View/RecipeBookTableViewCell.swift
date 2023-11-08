@@ -7,7 +7,7 @@
 
 import UIKit
 import Kingfisher
-
+import FirebaseStorage
 class RecipeBookTableViewCell: UITableViewCell {
 
     @IBOutlet private var labelUserName: UILabel!
@@ -29,14 +29,23 @@ class RecipeBookTableViewCell: UITableViewCell {
     var recipeDetails: Recipe? {
         didSet {
             labelUserName.text = recipeDetails?.userName ?? ""
-            guard let userImage = recipeDetails?.userProfileImage, let recipeThumb = recipeDetails?.thumbUrl else { return  }
-            let userUrl = URL(string: userImage)
-            let recipeThumbUrl = URL(string: recipeThumb)
-            imageViewRecipeThumb.kf.setImage(with: recipeThumbUrl)
-            imageViewUserProfile.kf.setImage(with: recipeThumbUrl)
+            guard let userImage = recipeDetails?.userID, let recipeThumb = recipeDetails?.thumbUrl else { return  }
+            
+            
+//            imageViewUserProfile.kf.setImage(with: userUrl)
             labelRecipeName.text = recipeDetails?.name ?? ""
             labelRecipeType.text = recipeDetails?.type ?? ""
             
+            let storageRef = Storage.storage().reference().child(recipeThumb)
+            storageRef.downloadURL { (url, error) in
+                self.imageViewRecipeThumb.kf.setImage(with: url)
+            }
+            
+            FirebaseRealTimeStorage.shared.getProfilePictureURL(forUserID: userImage) { url in
+                if let userUrl = url {
+                    self.imageViewUserProfile.kf.setImage(with: userUrl)
+                }
+            }
         }
     }
 }

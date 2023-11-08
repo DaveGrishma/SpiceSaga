@@ -38,8 +38,14 @@ class FirebaseRealTimeStorage {
         }
         
     }
-    
-    func uploadImage(name: String,image: Data,completion: @escaping (_ url: String?) -> Void) {
+    func temp() {
+        let storageRef = Storage.storage().reference().child("060C1ADB-0744-4FB4-BB77-090DB20C1276.png")
+        storageRef.downloadURL { (url, error) in
+            print(url)
+        }
+        
+    }
+    func uploadImage(name: String,image: Data,completion: @escaping(_ url: String?) -> Void) {
         let name = UUID().uuidString + ".png"
         let storageRef = Storage.storage().reference().child(name)
         storageRef.putData(image, metadata: nil) { (metadata, error) in
@@ -50,6 +56,34 @@ class FirebaseRealTimeStorage {
                 if let path = metadata?.path {
                     completion(path)
                 }
+                
+            }
+        }
+    }
+    
+    func uploadVideo(name: String,image: Data,completion: @escaping (_ url: String?) -> Void) {
+        let name = UUID().uuidString + ".MOV"
+        let storageRef = Storage.storage().reference().child(name)
+        storageRef.putData(image, metadata: nil) { (metadata, error) in
+            if error != nil {
+                print("error")
+                completion(nil)
+            } else {
+                if let videoUrl = metadata?.path {
+                    completion(videoUrl)
+                }
+            }
+        }
+    }
+    
+    func getProfilePictureURL(forUserID uid: String, completion: @escaping (URL?) -> Void) {
+        let storageRef = Storage.storage().reference().child("\(uid).png")
+        storageRef.downloadURL { (url, error) in
+            if let error = error {
+                print("Error retrieving profile picture URL: \(error.localizedDescription)")
+                completion(nil)
+            } else {
+                completion(url)
             }
         }
     }

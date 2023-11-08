@@ -46,10 +46,72 @@
             filePath = "SpiceSaga/Helper/FirebaseAuthManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "loginUser(email:password:success:failure:)"
             landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CCCA9869-4756-4B3B-900E-ACF0CE4CA599 - a4942ce01605760b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SpiceSaga.FirebaseAuthManager.loginUser(email: Swift.String, password: Swift.String, success: () -&gt; (), failure: () -&gt; ()) -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Helper/FirebaseAuthManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "CCCA9869-4756-4B3B-900E-ACF0CE4CA599 - a4942ce016057675"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SpiceSaga.FirebaseAuthManager.loginUser(email: Swift.String, password: Swift.String, success: () -&gt; (), failure: () -&gt; ()) -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Helper/FirebaseAuthManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "19"
+                  endingLineNumber = "19"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "CCCA9869-4756-4B3B-900E-ACF0CE4CA599 - a4942ce0160570bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SpiceSaga.FirebaseAuthManager.loginUser(email: Swift.String, password: Swift.String, success: () -&gt; (), failure: () -&gt; ()) -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Helper/FirebaseAuthManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "108">
+               </Location>
+               <Location
+                  uuid = "CCCA9869-4756-4B3B-900E-ACF0CE4CA599 - a4942ce0160570bf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SpiceSaga.FirebaseAuthManager.loginUser(email: Swift.String, password: Swift.String, success: () -&gt; (), failure: () -&gt; ()) -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Helper/FirebaseAuthManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "80">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -62,72 +124,40 @@
             filePath = "SpiceSaga/Helper/FirebaseAuthManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "loginUser(email:password:success:failure:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CF64C214-9499-49D0-AA47-B331388CB1BA"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpiceSaga/Helper/FirebaseAuthManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
-            landmarkName = "createUserAccount(email:password:complition:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "D51BDB51-AEE0-46A2-A8B3-7220FFF16F15"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpiceSaga/Helper/FirebaseAuthManager.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "30"
-            endingLineNumber = "30"
-            landmarkName = "createUserAccount(email:password:complition:)"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "D51BDB51-AEE0-46A2-A8B3-7220FFF16F15 - e1b55d6bfdf8f438"
+                  uuid = "DE5BC6C3-43FB-4E7F-BF00-4619C90E175E - a4942ce01605701a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SpiceSaga.FirebaseAuthManager.createUserAccount(email: Swift.String, password: Swift.String, complition: () -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SpiceSaga.FirebaseAuthManager.loginUser(email: Swift.String, password: Swift.String, success: () -&gt; (), failure: () -&gt; ()) -&gt; ()"
                   moduleName = "SpiceSaga"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Helper/FirebaseAuthManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "64">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "524">
                </Location>
                <Location
-                  uuid = "D51BDB51-AEE0-46A2-A8B3-7220FFF16F15 - e1b55d6bfdf8f438"
+                  uuid = "DE5BC6C3-43FB-4E7F-BF00-4619C90E175E - a4942ce01605701a"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SpiceSaga.FirebaseAuthManager.createUserAccount(email: Swift.String, password: Swift.String, complition: () -&gt; ()) -&gt; ()"
+                  symbolName = "closure #1 @Swift.MainActor () -&gt; () in closure #1 (Swift.Optional&lt;__C.FIRAuthDataResult&gt;, Swift.Optional&lt;Swift.Error&gt;) -&gt; () in SpiceSaga.FirebaseAuthManager.loginUser(email: Swift.String, password: Swift.String, success: () -&gt; (), failure: () -&gt; ()) -&gt; ()"
                   moduleName = "SpiceSaga"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Helper/FirebaseAuthManager.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "30"
-                  endingLineNumber = "30"
-                  offsetFromSymbolStart = "204">
+                  startingLineNumber = "32"
+                  endingLineNumber = "32"
+                  offsetFromSymbolStart = "192">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -208,6 +238,21 @@
                   endingLineNumber = "21"
                   offsetFromSymbolStart = "116">
                </Location>
+               <Location
+                  uuid = "05C6F2C2-6D1C-4C5F-B7B1-3AB37A492EF4 - e6e9a2e34c2382b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpiceSaga.ProfileViewController.didTapOnLogout() -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Views/Profile/ProfileViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "112">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
@@ -221,8 +266,8 @@
             filePath = "SpiceSaga/Views/AddRecipe/AddNewRecipeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
+            startingLineNumber = "148"
+            endingLineNumber = "148"
             landmarkName = "tableView(_:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -237,41 +282,9 @@
             filePath = "SpiceSaga/Views/AddRecipe/AddNewRecipeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "141"
-            endingLineNumber = "141"
+            startingLineNumber = "153"
+            endingLineNumber = "153"
             landmarkName = "tableView(_:cellForRowAt:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "4D998F89-8B6A-40FC-89EC-CDDB4236EE60"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpiceSaga/Views/AddRecipe/AddNewRecipeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "114"
-            endingLineNumber = "114"
-            landmarkName = "moveToAddIngredient(image:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CDA88DE4-0586-4EFD-A394-A0F841596E7D"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "SpiceSaga/Views/AddRecipe/AddNewRecipeViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
-            landmarkName = "moveToAddIngredient(image:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -285,8 +298,8 @@
             filePath = "SpiceSaga/Views/AddRecipe/AddNewRecipeViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "tableView(_:cellForRowAt:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -294,16 +307,221 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "7BF9FF92-F716-4A38-A07F-B77294B90E88"
+            uuid = "0523B017-4C2D-47D8-8800-1126A66DCC8A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiceSaga/Helper/FirebaseRealTimeStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "57"
+            endingLineNumber = "57"
+            landmarkName = "uploadImage(name:image:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBD70E91-7A02-491E-A425-36E1E8B040AB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "prepareView()"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "uploadIngredients(ingredients:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "EBD70E91-7A02-491E-A425-36E1E8B040AB - 21677ad84764d0f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpiceSaga.RecipeImagesViewController.uploadIngredients(ingredients: SpiceSaga.IngredientDetails) -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "84">
+               </Location>
+               <Location
+                  uuid = "EBD70E91-7A02-491E-A425-36E1E8B040AB - 21677ad84764d0f8"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpiceSaga.RecipeImagesViewController.uploadIngredients(ingredients: SpiceSaga.IngredientDetails) -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "168">
+               </Location>
+               <Location
+                  uuid = "EBD70E91-7A02-491E-A425-36E1E8B040AB - e2ed9b396da63abc"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in SpiceSaga.RecipeImagesViewController.uploadIngredients(ingredients: SpiceSaga.IngredientDetails) -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "98"
+                  endingLineNumber = "98"
+                  offsetFromSymbolStart = "204">
+               </Location>
+               <Location
+                  uuid = "EBD70E91-7A02-491E-A425-36E1E8B040AB - e2ed9b396da63adf"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (Swift.Optional&lt;Swift.String&gt;) -&gt; () in SpiceSaga.RecipeImagesViewController.uploadIngredients(ingredients: SpiceSaga.IngredientDetails) -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "99"
+                  endingLineNumber = "99"
+                  offsetFromSymbolStart = "236">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "D6A2B630-D8B4-44C0-95C1-9180C90A2783"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiceSaga/Helper/FirebaseRealTimeStorage.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "uploadImage(name:image:completion:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "595CFDD6-00D5-4A89-AF25-BB7235EA6078"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "uploadVideo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "CF50F463-3E59-4935-86ED-80F0D5F0A7DB"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
+            landmarkName = "uploadVideo()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "CF50F463-3E59-4935-86ED-80F0D5F0A7DB - 1c4c4b012cf8338a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpiceSaga.RecipeImagesViewController.uploadVideo() -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "188">
+               </Location>
+               <Location
+                  uuid = "CF50F463-3E59-4935-86ED-80F0D5F0A7DB - 1c4c4b012cf8338a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpiceSaga.RecipeImagesViewController.uploadVideo() -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "296">
+               </Location>
+               <Location
+                  uuid = "CF50F463-3E59-4935-86ED-80F0D5F0A7DB - 1c4c4b012cf8338a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SpiceSaga.RecipeImagesViewController.uploadVideo() -&gt; ()"
+                  moduleName = "SpiceSaga"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/psagc/Desktop/project/SpiceSaga-main/SpiceSaga/SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "404">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "5BEF6714-02ED-4175-9AB2-0C0BBC35E014"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiceSaga/Views/AddRecipe/RecipeImages/RecipeImagesViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "138"
+            endingLineNumber = "138"
+            landmarkName = "uploadVideo()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3242C00A-BFA0-478D-B643-6D2974BD61AD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SpiceSaga/Views/RecipeBook/RecipeBookViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
+            landmarkName = "setUI()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

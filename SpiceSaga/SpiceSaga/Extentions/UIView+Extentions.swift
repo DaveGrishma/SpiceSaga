@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftLoader
 
 extension UIView {
     
@@ -49,4 +50,33 @@ extension UIViewController {
     alertController.addAction(OKAction)
     self.present(alertController, animated: true, completion: nil)
   }
+    
+    func showLoader() {
+        DispatchQueue.main.async {
+            SwiftLoader.show(animated: true)
+        }        
+    }
+    
+    func showLoader(message: String) {
+        DispatchQueue.main.async {
+            SwiftLoader.show(title: message, animated: true)
+        }
+    }
+    
+    func hideLoader() {
+        DispatchQueue.main.async {
+            SwiftLoader.hide()
+        }
+    }
+}
+
+extension UIViewController {
+    func popToViewController<T: UIViewController>(_ type: T.Type,animation: Bool) {
+        for vc in navigationController?.viewControllers ?? []{
+            if vc.isKind(of: type.self) {
+                navigationController?.popToViewController(vc, animated: animation)
+                break
+            }
+        }
+    }
 }

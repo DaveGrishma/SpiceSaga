@@ -12,7 +12,7 @@
     {
       "identity" : "firebase-ios-sdk",
       "kind" : "remoteSourceControl",
-      "location" : "https://github.com/firebase/firebase-ios-sdk",
+      "location" : "https://github.com/firebase/firebase-ios-sdk.git",
       "state" : {
         "revision" : "837d4af6ead57cec1fc38007892500d3139c7556",
         "version" : "10.16.0"
@@ -115,6 +115,15 @@
       "state" : {
         "revision" : "3c54ab05249f59f2c6641dd2920b8358ea9ed127",
         "version" : "1.24.0"
+      }
+    },
+    {
+      "identity" : "swiftloader",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/leoru/SwiftLoader.git",
+      "state" : {
+        "revision" : "3d03ac07764075bfab4c9ce9d5ba4556d6af350e",
+        "version" : "1.1.0"
       }
     }
   ],

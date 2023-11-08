@@ -7,6 +7,7 @@
 
 import UIKit
 import Kingfisher
+import FirebaseStorage
 
 class MyRecipeCell: UITableViewCell {
 
@@ -34,8 +35,11 @@ class MyRecipeCell: UITableViewCell {
             labelName.text = recipeDetails?.name ?? ""
             labelDuration.text = recipeDetails?.duration ?? ""
             labelClaories.text = "\(recipeDetails?.calaroies ?? 0) Calories"
-            guard let imageUrlString = recipeDetails?.thumbUrl, let imageUrl = URL(string: imageUrlString) else { return  }
-            imageViewRecipe.kf.setImage(with: imageUrl)
+            guard let imageUrlString = recipeDetails?.thumbUrl else { return  }
+            let storageRef = Storage.storage().reference().child(imageUrlString)
+            storageRef.downloadURL { (url, error) in
+                self.imageViewRecipe.kf.setImage(with: url)
+            }
         }
     }
 }

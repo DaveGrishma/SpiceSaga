@@ -21,12 +21,22 @@ class MyRecipesViewController: UIViewController {
     }
     
     private func prepareView() {
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshRecipes), name: .refreshRecipes, object: nil)
+        loadRecipes()
         let headerView = MyRecipeHeaderView.shared
         headerView.didSelectedAdd = {
             self.moveToAddNewReciepe()
         }
         
         tableViewMyRecipes.tableHeaderView = headerView
+        
+    }
+   
+    @objc func refreshRecipes() {
+        loadRecipes()
+    }
+    
+    func loadRecipes() {
         FirebaseRMDatabase.shared.getMyRecipes { recipes in
             self.myRecipes.removeAll()
             self.myRecipes.append(contentsOf: recipes)
@@ -35,8 +45,6 @@ class MyRecipesViewController: UIViewController {
             }
         }
     }
-   
-
     private func moveToAddNewReciepe() {
         guard let addRecipeVc = SpiceSagaStoryBoards.main.getViewController(AddNewRecipeViewController.self) else { return  }
         navigationController?.pushViewController(addRecipeVc, animated: true)

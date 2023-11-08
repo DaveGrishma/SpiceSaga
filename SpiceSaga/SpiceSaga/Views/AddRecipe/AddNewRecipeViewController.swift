@@ -26,10 +26,18 @@ class AddNewRecipeViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        prepareView()
     }
     
+    private func prepareView() {
+        recipeDetails.region = "India"
+        recipeDetails.type = "Breakfast"
+        recipeDetails.duration = "1 Min"
+        recipeDetails.calories = 5
+    }
     @IBAction private func didTapOnBack() {
         navigationController?.popViewController(animated: true)
+        
     }
 
     
@@ -78,14 +86,16 @@ class AddNewRecipeViewController: UIViewController {
     
     @IBAction private func didTapOnNext() {
         if textFieldRecipeName.text?.isEmpty ?? false {
-            self.alertPresent(withTitle: "Alert", message: "Please enter recipe name")
-        }
-        if let reciepImagesViewController = SpiceSagaStoryBoards.main.getViewController(RecipeImagesViewController.self) {
+            self.alertPresent(withTitle: "Error", message: "Please enter recipe name")
+        } else if ingredients.isEmpty {
+            self.alertPresent(withTitle: "Error", message: "Please add ingredient details")
+        } else if let reciepImagesViewController = SpiceSagaStoryBoards.main.getViewController(RecipeImagesViewController.self) {
             recipeDetails.name = textFieldRecipeName?.text ?? ""
             recipeDetails.ingredients = ingredients
             reciepImagesViewController.recipeDetails = recipeDetails
             navigationController?.pushViewController(reciepImagesViewController, animated: true)
         }
+        
     }
     
     @IBAction private func didTapOnAddIngredients() {
@@ -117,6 +127,8 @@ class AddNewRecipeViewController: UIViewController {
             present(addIngredientsViewController, animated: true)
         }
     }
+    
+    
 }
 extension AddNewRecipeViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {

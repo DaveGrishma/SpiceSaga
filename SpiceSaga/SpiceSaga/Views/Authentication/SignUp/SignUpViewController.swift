@@ -29,28 +29,22 @@ class SignUpViewController: UIViewController {
     
     @IBAction private func didTapOnNext() {
         
-        if !ValidateClass.isValidUsername(for: textName.text ?? "") {
+        if ValidateClass.isValidUsername(for: textName.text ?? "") {
             self.alertPresent(withTitle: "Invalid Username", message: "Please enter valid username")
-        }
-        
-        if !ValidateClass.isValidUsername(for: textName.text ?? "") {
-            self.alertPresent(withTitle: "Invalid Username", message: "Please enter valid username")
-        }
-        
-        if !ValidateClass.isValidEmail(for: textEmail.text ?? "") {
+        } else if (textEmail.text ?? "").isEmpty {
             self.alertPresent(withTitle: "Invalid Email", message: "Please enter valid email")
-        }
-        
-        if !ValidateClass.isPasswordValid(for: textPassword.text ?? "") {
+        } else if (textPassword.text ?? "").isEmpty {
             self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password")
+        } else {
+            if let userDetailsVc = SpiceSagaStoryBoards.main.getViewController(UserDetailsViewController.self) {
+                userDetailsVc.textName = textName.text
+                userDetailsVc.textEmail = textEmail.text
+                userDetailsVc.textPassword = textPassword.text
+                navigationController?.pushViewController(userDetailsVc, animated: true)
+            }
         }
         
-        if let userDetailsVc = SpiceSagaStoryBoards.main.getViewController(UserDetailsViewController.self) {
-            userDetailsVc.textName = textName.text
-            userDetailsVc.textEmail = textEmail.text
-            userDetailsVc.textPassword = textPassword.text
-            navigationController?.pushViewController(userDetailsVc, animated: true)
-        }
+        
     }
     
     private func moveToLogin() {

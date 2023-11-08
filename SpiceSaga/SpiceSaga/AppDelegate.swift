@@ -8,6 +8,7 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import SwiftLoader
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +24,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     private func prepareApplication() {
         FirebaseApp.configure()
+        var config : SwiftLoader.Config = SwiftLoader.Config()
+        config.size = 150
+        config.spinnerColor = .orange
+        config.foregroundColor = .black
+        config.foregroundAlpha = 0.5
+        SwiftLoader.setConfig(config)
+        
         if Auth.auth().currentUser != nil {
             guard let loginVc = SpiceSagaStoryBoards.main.getViewController(LoginViewController.self) else { return }
             guard let tabVc = SpiceSagaStoryBoards.main.getViewController(HomeTabViewController.self) else { return }
@@ -30,7 +38,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationVc.viewControllers = [tabVc]
             window?.rootViewController = navigationVc
         }
-        
+        FirebaseAuthManager.shared.setUpUserDetails()
     }
     
     

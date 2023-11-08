@@ -37,19 +37,18 @@ class UserDetailsViewController: UIViewController {
     }
     
     @IBAction private func didTapOnSubmit() {
-        let imgSystem = UIImage(systemName: "person.crop.circle.fill.badge.plus")
-        
         if isImageSelected {
-            if !ValidateClass.isValidCountry(for: "\(buttonCountry.titleLabel?.text ?? "")") {
+            if countrySelected?.isEmpty ?? false {
                 alertPresent(withTitle: "Wait", message: "Please select country")
             } else {
-                guard let email = textEmail, let name = textName, let password = textPassword, let countryName: String = countrySelected else { return  }
-                FirebaseAuthManager.shared.createUserAccount(email: email, password: password) {
-                    if let image = self.buttomProfileImage.imageView?.image?.pngData() {
-                        FirebaseRealTimeStorage.shared.uploadMedia(name: name, country: countryName, image: image) { url in
-                            DispatchQueue.main.async {
-                                self.moveToHome()
-                            }
+                guard let email = textEmail, let name = textName, let password = textPassword, let countryName: String = countrySelected, let image = self.buttomProfileImage.imageView?.image  else { return  }
+                showLoader()
+                FirebaseAuthManager.shared.createUserAccount(email: email, password: password, name: name, country: countryName, profileImage: image) { error in
+                    self.hideLoader()
+                    FirebaseAuthManager.shared.setUpUserDetails()
+                    if error == nil {
+                        DispatchQueue.main.async {
+                            self.moveToHome()
                         }
                     }
                 }
