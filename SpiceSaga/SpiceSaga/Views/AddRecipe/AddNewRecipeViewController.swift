@@ -100,7 +100,7 @@ class AddNewRecipeViewController: UIViewController {
     
     @IBAction private func didTapOnAddIngredients() {
         let alertSelectImage = UIAlertController(title: "Select Image", message: "Select thumbain image that will be visable to everyone.", preferredStyle: .actionSheet)
-        alertSelectImage.addAction(UIAlertAction(title: "Camara", style: .default,handler: { _ in
+        alertSelectImage.addAction(UIAlertAction(title: "Camera", style: .default,handler: { _ in
             self.openImageController(source: .camera)
         }))
         alertSelectImage.addAction(UIAlertAction(title: "Photos", style: .default,handler: { _ in
@@ -115,7 +115,7 @@ class AddNewRecipeViewController: UIViewController {
         imagePicker.sourceType = source
         imagePicker.delegate = self
         present(imagePicker, animated: true)
-    }
+    }  
     
     private func moveToAddIngredient(image: UIImage) {
         if let addIngredientsViewController = SpiceSagaStoryBoards.main.getViewController(AddIngredientsViewController.self) {

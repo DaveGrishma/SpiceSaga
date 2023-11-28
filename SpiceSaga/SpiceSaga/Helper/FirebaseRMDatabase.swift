@@ -6,6 +6,7 @@
 //
 
 import FirebaseDatabase
+import CoreData
 
 struct Recipe {
     var id: String
@@ -22,6 +23,40 @@ struct Recipe {
     var calaroies: Int
     var ingredients: [String: String]
     var steps: [String: String]
+    
+    init(id: String, name: String, description: String, type: String, region: String, thumbUrl: String, videoUrl: String, userID: String, userName: String, userProfileImage: String, duration: String, calaroies: Int, ingredients: [String : String], steps: [String : String]) {
+        self.id = id
+        self.name = name
+        self.description = description
+        self.type = type
+        self.region = region
+        self.thumbUrl = thumbUrl
+        self.videoUrl = videoUrl
+        self.userID = userID
+        self.userName = userName
+        self.userProfileImage = userProfileImage
+        self.duration = duration
+        self.calaroies = calaroies
+        self.ingredients = ingredients
+        self.steps = steps
+    }
+    
+    init(object: NSManagedObject) {
+        self.id = object.value(forKey: "id") as? String ?? ""
+        self.name = object.value(forKey: "name") as? String ?? ""
+        self.description = object.value(forKey: "recipeDesciption") as? String ?? ""
+        self.type = object.value(forKey: "type") as? String ?? ""
+        self.region = object.value(forKey: "region") as? String ?? ""
+        self.thumbUrl = object.value(forKey: "thumbUrl") as? String ?? ""
+        self.videoUrl = object.value(forKey: "videoUrl") as? String ?? ""
+        self.userID = object.value(forKey: "userID") as? String ?? ""
+        self.userName = object.value(forKey: "userName") as? String ?? ""
+        self.userProfileImage = object.value(forKey: "userProfileImage") as? String ?? ""
+        self.duration = object.value(forKey: "duration") as? String ?? ""
+        self.calaroies = object.value(forKey: "calaroies") as? Int ?? 0
+        self.ingredients = object.value(forKey: "ingredients") as? [String:String] ?? [:]
+        self.steps = object.value(forKey: "steps") as? [String: String] ?? [:]
+    }
 }
 class FirebaseRMDatabase {
     
@@ -42,9 +77,9 @@ class FirebaseRMDatabase {
                     
                     if let recipeDetails = (details.value as? [String: Any]){
                         let ingredients = recipeDetails["ingredients"] as? [String: String] ?? [:]
+                        let cookingSteps = recipeDetails["steps"] as? [String: String] ?? [:]
                         
-                        
-                        recipes.append(Recipe(id: recipeDetails["id"] as? String ?? "",name: recipeDetails["name"] as? String ?? "", description: recipeDetails["desciption"] as? String ?? "", type: recipeDetails["type"] as? String ?? "", region: recipeDetails["region"] as? String ?? "", thumbUrl: recipeDetails["thumbUrl"] as? String ?? "", videoUrl: recipeDetails["videoUrl"] as? String ?? "", userID: recipeDetails["userID"] as? String ?? "", userName: recipeDetails["userName"] as? String ?? "", userProfileImage: "https://firebasestorage.googleapis.com:443/v0/b/recipeapp-86e78.appspot.com/o/C2C51527-C30C-4E24-A396-44A989309172.png?alt=media&token=b9252216-18a9-41e7-87f5-ef21032b673a",duration: recipeDetails["duration"] as? String ?? "",calaroies: recipeDetails["calories"] as? Int ?? 0,ingredients: ingredients, steps: [:]))
+                        recipes.append(Recipe(id: recipeDetails["id"] as? String ?? "",name: recipeDetails["name"] as? String ?? "", description: recipeDetails["desciption"] as? String ?? "", type: recipeDetails["type"] as? String ?? "", region: recipeDetails["region"] as? String ?? "", thumbUrl: recipeDetails["thumbUrl"] as? String ?? "", videoUrl: recipeDetails["videoUrl"] as? String ?? "", userID: recipeDetails["userID"] as? String ?? "", userName: recipeDetails["userName"] as? String ?? "", userProfileImage: "https://firebasestorage.googleapis.com:443/v0/b/recipeapp-86e78.appspot.com/o/C2C51527-C30C-4E24-A396-44A989309172.png?alt=media&token=b9252216-18a9-41e7-87f5-ef21032b673a",duration: recipeDetails["duration"] as? String ?? "",calaroies: recipeDetails["calories"] as? Int ?? 0,ingredients: ingredients, steps: cookingSteps))
                     }
                     
                     
@@ -103,6 +138,19 @@ class FirebaseRMDatabase {
                 }
                 complition(recipes)
             }
+        }
+    }
+    func deleteRecipe(id: String,complition: @escaping(() -> Void)) {
+        let ref = Database.database().reference()
+        let nodePath = "RecipeApp/Recipes/\(id)"
+        let nodeRef = ref.child(nodePath)
+        nodeRef.removeValue { error, _ in
+            if let error = error {
+                print("Error removing data: \(error.localizedDescription)")
+            } else {
+                print("Data removed successfully!")
+            }
+            complition()
         }
     }
 }

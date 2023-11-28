@@ -7,6 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6E24B0662B163F62006D802A /* IngredientsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E24B0642B163F62006D802A /* IngredientsCell.swift */; };
+		6E24B0672B163F62006D802A /* IngredientsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E24B0652B163F62006D802A /* IngredientsCell.xib */; };
+		6E24B06A2B165307006D802A /* CookingStepsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E24B0682B165307006D802A /* CookingStepsCell.swift */; };
+		6E24B06B2B165307006D802A /* CookingStepsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6E24B0692B165307006D802A /* CookingStepsCell.xib */; };
+		6E24B06F2B165E0A006D802A /* SpiceSaga.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 6E24B06D2B165E0A006D802A /* SpiceSaga.xcdatamodeld */; };
+		6E24B0722B165E60006D802A /* SpiceSagaDataServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E24B0712B165E60006D802A /* SpiceSagaDataServices.swift */; };
 		6E51E5942AF8BC8E009FF3DA /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6E51E5932AF8BC8E009FF3DA /* GoogleService-Info.plist */; };
 		6E51E5972AF8BF0A009FF3DA /* RecipeBookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E51E5962AF8BF0A009FF3DA /* RecipeBookViewController.swift */; };
 		6E51E59B2AF8BFAC009FF3DA /* RecipeBookTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6E51E5992AF8BFAC009FF3DA /* RecipeBookTableViewCell.swift */; };
@@ -74,8 +80,6 @@
 		6EEAB5962AFA372700C5ACC1 /* MyRecipeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEAB5952AFA372700C5ACC1 /* MyRecipeHeaderView.swift */; };
 		6EEAB5982AFA372E00C5ACC1 /* MyRecipeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEAB5972AFA372E00C5ACC1 /* MyRecipeHeaderView.xib */; };
 		B13ABCCC2B143D76006A2094 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ABCCB2B143D76006A2094 /* DetailRecipeViewController.swift */; };
-		B13ABCD02B1516AF006A2094 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ABCCE2B1516AF006A2094 /* IngredientsTableViewCell.swift */; };
-		B13ABCD12B1516AF006A2094 /* IngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13ABCCF2B1516AF006A2094 /* IngredientsTableViewCell.xib */; };
 		B13ABCD42B155BD6006A2094 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ABCD32B155BD6006A2094 /* VideoPlayerViewController.swift */; };
 		B140A74A2AD8519100CFFC7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B140A7492AD8519100CFFC7B /* AppDelegate.swift */; };
 		B140A7512AD8519100CFFC7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B140A74F2AD8519100CFFC7B /* Main.storyboard */; };
@@ -85,6 +89,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6E24B0642B163F62006D802A /* IngredientsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsCell.swift; sourceTree = "<group>"; };
+		6E24B0652B163F62006D802A /* IngredientsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsCell.xib; sourceTree = "<group>"; };
+		6E24B0682B165307006D802A /* CookingStepsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CookingStepsCell.swift; sourceTree = "<group>"; };
+		6E24B0692B165307006D802A /* CookingStepsCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CookingStepsCell.xib; sourceTree = "<group>"; };
+		6E24B06E2B165E0A006D802A /* SpiceSaga.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SpiceSaga.xcdatamodel; sourceTree = "<group>"; };
+		6E24B0712B165E60006D802A /* SpiceSagaDataServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpiceSagaDataServices.swift; sourceTree = "<group>"; };
 		6E51E5932AF8BC8E009FF3DA /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		6E51E5962AF8BF0A009FF3DA /* RecipeBookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookViewController.swift; sourceTree = "<group>"; };
 		6E51E5992AF8BFAC009FF3DA /* RecipeBookTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeBookTableViewCell.swift; sourceTree = "<group>"; };
@@ -123,8 +133,6 @@
 		6EEAB5952AFA372700C5ACC1 /* MyRecipeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeHeaderView.swift; sourceTree = "<group>"; };
 		6EEAB5972AFA372E00C5ACC1 /* MyRecipeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecipeHeaderView.xib; sourceTree = "<group>"; };
 		B13ABCCB2B143D76006A2094 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
-		B13ABCCE2B1516AF006A2094 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
-		B13ABCCF2B1516AF006A2094 /* IngredientsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsTableViewCell.xib; sourceTree = "<group>"; };
 		B13ABCD32B155BD6006A2094 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		B140A7462AD8519100CFFC7B /* SpiceSaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceSaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B140A7492AD8519100CFFC7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -175,6 +183,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6E24B06C2B16595F006D802A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				6E24B06D2B165E0A006D802A /* SpiceSaga.xcdatamodeld */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		6E24B0702B165E51006D802A /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				6E24B0712B165E60006D802A /* SpiceSagaDataServices.swift */,
+			);
+			path = Database;
+			sourceTree = "<group>";
+		};
 		6E51E5952AF8BEFB009FF3DA /* RecipeBook */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,8 +406,10 @@
 		B13ABCCD2B15166E006A2094 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				B13ABCCE2B1516AF006A2094 /* IngredientsTableViewCell.swift */,
-				B13ABCCF2B1516AF006A2094 /* IngredientsTableViewCell.xib */,
+				6E24B0642B163F62006D802A /* IngredientsCell.swift */,
+				6E24B0652B163F62006D802A /* IngredientsCell.xib */,
+				6E24B0682B165307006D802A /* CookingStepsCell.swift */,
+				6E24B0692B165307006D802A /* CookingStepsCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,6 +441,8 @@
 		B140A7482AD8519100CFFC7B /* SpiceSaga */ = {
 			isa = PBXGroup;
 			children = (
+				6E24B0702B165E51006D802A /* Database */,
+				6E24B06C2B16595F006D802A /* Resources */,
 				6E51E5932AF8BC8E009FF3DA /* GoogleService-Info.plist */,
 				6EDE454F2AE0D5E600364450 /* Helper */,
 				6E823BE82ADFB15B00E03A11 /* Utils */,
@@ -530,11 +558,12 @@
 				6EEAB58C2AFA059300C5ACC1 /* RecipeBookListHeader.xib in Resources */,
 				6ECABEC12AFA90DC00262387 /* AddedIngredientsCell.xib in Resources */,
 				6EEAB5982AFA372E00C5ACC1 /* MyRecipeHeaderView.xib in Resources */,
+				6E24B0672B163F62006D802A /* IngredientsCell.xib in Resources */,
 				6E823BE42ADFA0E800E03A11 /* OnboardingCollectionViewCell.xib in Resources */,
-				B13ABCD12B1516AF006A2094 /* IngredientsTableViewCell.xib in Resources */,
 				6ECABEB72AFA760500262387 /* RecipeStepsCell.xib in Resources */,
 				B140A7512AD8519100CFFC7B /* Main.storyboard in Resources */,
 				6EEAB5942AFA341700C5ACC1 /* MyRecipeCell.xib in Resources */,
+				6E24B06B2B165307006D802A /* CookingStepsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,7 +574,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6E24B06A2B165307006D802A /* CookingStepsCell.swift in Sources */,
 				6E51E59E2AF8C07E009FF3DA /* UITableView+Extentions.swift in Sources */,
+				6E24B06F2B165E0A006D802A /* SpiceSaga.xcdatamodeld in Sources */,
 				B13ABCD42B155BD6006A2094 /* VideoPlayerViewController.swift in Sources */,
 				6E823BD82ADF9F1600E03A11 /* LoginViewController.swift in Sources */,
 				6EA25DB52AE15E06005720C6 /* FirebaseRealTimeStorage.swift in Sources */,
@@ -557,6 +588,7 @@
 				6E823BDD2ADF9F9600E03A11 /* OnboardingViewController.swift in Sources */,
 				6E823BEE2ADFBF2700E03A11 /* UIView+Extentions.swift in Sources */,
 				B13ABCCC2B143D76006A2094 /* DetailRecipeViewController.swift in Sources */,
+				6E24B0662B163F62006D802A /* IngredientsCell.swift in Sources */,
 				6ECABEB22AFA6F7000262387 /* RecipeImagesViewController.swift in Sources */,
 				6EEAB58A2AFA058B00C5ACC1 /* RecipeBookListHeader.swift in Sources */,
 				6E823BEC2ADFB1A600E03A11 /* UIStoryboards+Extentions.swift in Sources */,
@@ -565,9 +597,9 @@
 				B15C074F2AE82C9F0014A6BD /* ValidateClass.swift in Sources */,
 				6EEAB5962AFA372700C5ACC1 /* MyRecipeHeaderView.swift in Sources */,
 				6E51E5A02AF8C524009FF3DA /* FirebaseRMDatabase.swift in Sources */,
+				6E24B0722B165E60006D802A /* SpiceSagaDataServices.swift in Sources */,
 				6EEAB58F2AFA30FC00C5ACC1 /* MyRecipesViewController.swift in Sources */,
 				6EDE45532AE0EDA800364450 /* UserDetailsViewController.swift in Sources */,
-				B13ABCD02B1516AF006A2094 /* IngredientsTableViewCell.swift in Sources */,
 				6E9D540C2AE78653002516B4 /* ProfileViewController.swift in Sources */,
 				6E823BEA2ADFB16B00E03A11 /* SpiceSagaStoryBoards.swift in Sources */,
 				6E823BE32ADFA0E800E03A11 /* OnboardingCollectionViewCell.swift in Sources */,
@@ -971,6 +1003,19 @@
 			productName = "FirebaseStorageCombine-Community";
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		6E24B06D2B165E0A006D802A /* SpiceSaga.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				6E24B06E2B165E0A006D802A /* SpiceSaga.xcdatamodel */,
+			);
+			currentVersion = 6E24B06E2B165E0A006D802A /* SpiceSaga.xcdatamodel */;
+			path = SpiceSaga.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = B140A73E2AD8519100CFFC7B /* Project object */;
 }

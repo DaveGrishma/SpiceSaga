@@ -15,7 +15,6 @@ class MyRecipesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
         prepareView()
     }
@@ -27,9 +26,7 @@ class MyRecipesViewController: UIViewController {
         headerView.didSelectedAdd = {
             self.moveToAddNewReciepe()
         }
-        
         tableViewMyRecipes.tableHeaderView = headerView
-        
     }
    
     @objc func refreshRecipes() {
@@ -50,6 +47,16 @@ class MyRecipesViewController: UIViewController {
         navigationController?.pushViewController(addRecipeVc, animated: true)
     }
     
+    private func deleteRecipe(id: String) {
+        let alertDelete = UIAlertController(title: "Remove Recipe", message: "Are you sure you want to remove this recipe? it'll be permently removed from you recipe book and won't be visable to others.", preferredStyle: .alert)
+        alertDelete.addAction(UIAlertAction(title: "Remove", style: .default, handler: { _ in
+            FirebaseRMDatabase.shared.deleteRecipe(id: id) {
+                self.loadRecipes()
+            }
+        }))
+        alertDelete.addAction(UIAlertAction(title: "No", style: .cancel))
+        present(alertDelete, animated: true)
+    }
 }
 
 extension MyRecipesViewController: UITableViewDataSource, UITableViewDelegate {
@@ -59,6 +66,9 @@ extension MyRecipesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.registerAndGetCell(MyRecipeCell.self)
         cell.recipeDetails = myRecipes[indexPath.row]
+        cell.didSelectedDelete = {
+            self.deleteRecipe(id: self.myRecipes[indexPath.row].id)
+        }
         return cell
     }
 }

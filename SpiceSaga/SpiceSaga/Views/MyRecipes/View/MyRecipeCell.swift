@@ -17,6 +17,8 @@ class MyRecipeCell: UITableViewCell {
     @IBOutlet private var labelClaories: UILabel!
     @IBOutlet private var imageViewRecipe: UIImageView!
     
+    var didSelectedDelete:(() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -41,5 +43,9 @@ class MyRecipeCell: UITableViewCell {
                 self.imageViewRecipe.kf.setImage(with: url)
             }
         }
+    }
+    
+    @IBAction private func didTapOnDelete() {
+        didSelectedDelete?()
     }
 }

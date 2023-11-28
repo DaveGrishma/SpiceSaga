@@ -108,16 +108,5 @@ class FirebaseAuthManager {
         Auth.auth().currentUser
     }
     
-    func deleteDetail(id: String) {
-        let ref = Database.database().reference()
-        let nodePath = "RecipeApp/Recipes/\(id)"
-        let nodeRef = ref.child(nodePath)
-        nodeRef.removeValue { error, _ in
-            if let error = error {
-                print("Error removing data: \(error.localizedDescription)")
-            } else {
-                print("Data removed successfully!")
-            }
-        }
-    }
+    
 }
