@@ -124,7 +124,7 @@ class RecipeImagesViewController: UIViewController {
                 FirebaseRealTimeStorage.shared.uploadVideo(name: details.name, image: videoData) { url in
                     self.hideLoader()
                     if let vUrl = url {
-                        FirebaseRMDatabase.shared.addNewRecipe(recipe: Recipe(name: details.name, description: details.duration, type: details.type, region: details.region, thumbUrl: self.thumailUrl, videoUrl: vUrl, userID: FirebaseAuthManager.shared.userID, userName: user.userName, userProfileImage: user.profileUrl, duration: details.duration, calaroies: details.calories, ingredients: self.ingredientsDetails, steps: [:]))
+                        FirebaseRMDatabase.shared.addNewRecipe(recipe: Recipe(id: "",name: details.name, description: details.duration, type: details.type, region: details.region, thumbUrl: self.thumailUrl, videoUrl: vUrl, userID: FirebaseAuthManager.shared.userID, userName: user.userName, userProfileImage: user.profileUrl, duration: details.duration, calaroies: details.calories, ingredients: self.ingredientsDetails, steps: [:]))
                         
                     }
                     NotificationCenter.default.post(name: .refreshRecipes, object: nil)

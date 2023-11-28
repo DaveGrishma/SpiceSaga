@@ -52,7 +52,7 @@ class MyRecipesViewController: UIViewController {
     
 }
 
-extension MyRecipesViewController: UITableViewDataSource {
+extension MyRecipesViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return myRecipes.count
     }

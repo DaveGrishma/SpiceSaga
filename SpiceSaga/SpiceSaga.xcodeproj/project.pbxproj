@@ -73,6 +73,10 @@
 		6EEAB5942AFA341700C5ACC1 /* MyRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEAB5922AFA341700C5ACC1 /* MyRecipeCell.xib */; };
 		6EEAB5962AFA372700C5ACC1 /* MyRecipeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEAB5952AFA372700C5ACC1 /* MyRecipeHeaderView.swift */; };
 		6EEAB5982AFA372E00C5ACC1 /* MyRecipeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEAB5972AFA372E00C5ACC1 /* MyRecipeHeaderView.xib */; };
+		B13ABCCC2B143D76006A2094 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ABCCB2B143D76006A2094 /* DetailRecipeViewController.swift */; };
+		B13ABCD02B1516AF006A2094 /* IngredientsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ABCCE2B1516AF006A2094 /* IngredientsTableViewCell.swift */; };
+		B13ABCD12B1516AF006A2094 /* IngredientsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B13ABCCF2B1516AF006A2094 /* IngredientsTableViewCell.xib */; };
+		B13ABCD42B155BD6006A2094 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ABCD32B155BD6006A2094 /* VideoPlayerViewController.swift */; };
 		B140A74A2AD8519100CFFC7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B140A7492AD8519100CFFC7B /* AppDelegate.swift */; };
 		B140A7512AD8519100CFFC7B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B140A74F2AD8519100CFFC7B /* Main.storyboard */; };
 		B140A7532AD8519300CFFC7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B140A7522AD8519300CFFC7B /* Assets.xcassets */; };
@@ -118,6 +122,10 @@
 		6EEAB5922AFA341700C5ACC1 /* MyRecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecipeCell.xib; sourceTree = "<group>"; };
 		6EEAB5952AFA372700C5ACC1 /* MyRecipeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeHeaderView.swift; sourceTree = "<group>"; };
 		6EEAB5972AFA372E00C5ACC1 /* MyRecipeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecipeHeaderView.xib; sourceTree = "<group>"; };
+		B13ABCCB2B143D76006A2094 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
+		B13ABCCE2B1516AF006A2094 /* IngredientsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientsTableViewCell.swift; sourceTree = "<group>"; };
+		B13ABCCF2B1516AF006A2094 /* IngredientsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = IngredientsTableViewCell.xib; sourceTree = "<group>"; };
+		B13ABCD32B155BD6006A2094 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		B140A7462AD8519100CFFC7B /* SpiceSaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceSaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B140A7492AD8519100CFFC7B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B140A7502AD8519100CFFC7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -190,6 +198,8 @@
 		6E823BD32ADF9ECB00E03A11 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				B13ABCD22B1559BE006A2094 /* VideoPlayer */,
+				B13ABCCA2B143D4C006A2094 /* DetailRecipe */,
 				6ECABEAD2AFA5CBE00262387 /* AddRecipe */,
 				6EEAB58D2AFA30EE00C5ACC1 /* MyRecipes */,
 				6E51E5952AF8BEFB009FF3DA /* RecipeBook */,
@@ -360,6 +370,32 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B13ABCCA2B143D4C006A2094 /* DetailRecipe */ = {
+			isa = PBXGroup;
+			children = (
+				B13ABCCD2B15166E006A2094 /* View */,
+				B13ABCCB2B143D76006A2094 /* DetailRecipeViewController.swift */,
+			);
+			path = DetailRecipe;
+			sourceTree = "<group>";
+		};
+		B13ABCCD2B15166E006A2094 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B13ABCCE2B1516AF006A2094 /* IngredientsTableViewCell.swift */,
+				B13ABCCF2B1516AF006A2094 /* IngredientsTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B13ABCD22B1559BE006A2094 /* VideoPlayer */ = {
+			isa = PBXGroup;
+			children = (
+				B13ABCD32B155BD6006A2094 /* VideoPlayerViewController.swift */,
+			);
+			path = VideoPlayer;
+			sourceTree = "<group>";
+		};
 		B140A73D2AD8519100CFFC7B = {
 			isa = PBXGroup;
 			children = (
@@ -495,6 +531,7 @@
 				6ECABEC12AFA90DC00262387 /* AddedIngredientsCell.xib in Resources */,
 				6EEAB5982AFA372E00C5ACC1 /* MyRecipeHeaderView.xib in Resources */,
 				6E823BE42ADFA0E800E03A11 /* OnboardingCollectionViewCell.xib in Resources */,
+				B13ABCD12B1516AF006A2094 /* IngredientsTableViewCell.xib in Resources */,
 				6ECABEB72AFA760500262387 /* RecipeStepsCell.xib in Resources */,
 				B140A7512AD8519100CFFC7B /* Main.storyboard in Resources */,
 				6EEAB5942AFA341700C5ACC1 /* MyRecipeCell.xib in Resources */,
@@ -509,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6E51E59E2AF8C07E009FF3DA /* UITableView+Extentions.swift in Sources */,
+				B13ABCD42B155BD6006A2094 /* VideoPlayerViewController.swift in Sources */,
 				6E823BD82ADF9F1600E03A11 /* LoginViewController.swift in Sources */,
 				6EA25DB52AE15E06005720C6 /* FirebaseRealTimeStorage.swift in Sources */,
 				6ECABEC02AFA90DC00262387 /* AddedIngredientsCell.swift in Sources */,
@@ -518,6 +556,7 @@
 				6ECABEBC2AFA8C9700262387 /* AddIngredientsViewController.swift in Sources */,
 				6E823BDD2ADF9F9600E03A11 /* OnboardingViewController.swift in Sources */,
 				6E823BEE2ADFBF2700E03A11 /* UIView+Extentions.swift in Sources */,
+				B13ABCCC2B143D76006A2094 /* DetailRecipeViewController.swift in Sources */,
 				6ECABEB22AFA6F7000262387 /* RecipeImagesViewController.swift in Sources */,
 				6EEAB58A2AFA058B00C5ACC1 /* RecipeBookListHeader.swift in Sources */,
 				6E823BEC2ADFB1A600E03A11 /* UIStoryboards+Extentions.swift in Sources */,
@@ -528,6 +567,7 @@
 				6E51E5A02AF8C524009FF3DA /* FirebaseRMDatabase.swift in Sources */,
 				6EEAB58F2AFA30FC00C5ACC1 /* MyRecipesViewController.swift in Sources */,
 				6EDE45532AE0EDA800364450 /* UserDetailsViewController.swift in Sources */,
+				B13ABCD02B1516AF006A2094 /* IngredientsTableViewCell.swift in Sources */,
 				6E9D540C2AE78653002516B4 /* ProfileViewController.swift in Sources */,
 				6E823BEA2ADFB16B00E03A11 /* SpiceSagaStoryBoards.swift in Sources */,
 				6E823BE32ADFA0E800E03A11 /* OnboardingCollectionViewCell.swift in Sources */,
