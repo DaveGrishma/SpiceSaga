@@ -87,6 +87,7 @@
 		B140A7532AD8519300CFFC7B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B140A7522AD8519300CFFC7B /* Assets.xcassets */; };
 		B140A7562AD8519300CFFC7B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B140A7542AD8519300CFFC7B /* LaunchScreen.storyboard */; };
 		B15C074F2AE82C9F0014A6BD /* ValidateClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15C074E2AE82C9F0014A6BD /* ValidateClass.swift */; };
+		B1B7800F2B2840F1008BAAE0 /* CreatedAtMyMachine.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1B7800E2B2840F1008BAAE0 /* CreatedAtMyMachine.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -143,6 +144,7 @@
 		B140A7552AD8519300CFFC7B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B140A7572AD8519300CFFC7B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B15C074E2AE82C9F0014A6BD /* ValidateClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateClass.swift; sourceTree = "<group>"; };
+		B1B7800E2B2840F1008BAAE0 /* CreatedAtMyMachine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatedAtMyMachine.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -456,6 +458,7 @@
 				B140A7542AD8519300CFFC7B /* LaunchScreen.storyboard */,
 				B140A7572AD8519300CFFC7B /* Info.plist */,
 				6EF1B07A2B28330E00F01BE9 /* FileCreatedByPSAGC.swift */,
+				B1B7800E2B2840F1008BAAE0 /* CreatedAtMyMachine.swift */,
 			);
 			path = SpiceSaga;
 			sourceTree = "<group>";
@@ -596,6 +599,7 @@
 				6ECABEB22AFA6F7000262387 /* RecipeImagesViewController.swift in Sources */,
 				6EEAB58A2AFA058B00C5ACC1 /* RecipeBookListHeader.swift in Sources */,
 				6E823BEC2ADFB1A600E03A11 /* UIStoryboards+Extentions.swift in Sources */,
+				B1B7800F2B2840F1008BAAE0 /* CreatedAtMyMachine.swift in Sources */,
 				6E51E5972AF8BF0A009FF3DA /* RecipeBookViewController.swift in Sources */,
 				6ECABEB62AFA760500262387 /* RecipeStepsCell.swift in Sources */,
 				B15C074F2AE82C9F0014A6BD /* ValidateClass.swift in Sources */,
