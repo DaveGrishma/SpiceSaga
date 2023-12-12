@@ -79,6 +79,7 @@
 		6EEAB5942AFA341700C5ACC1 /* MyRecipeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEAB5922AFA341700C5ACC1 /* MyRecipeCell.xib */; };
 		6EEAB5962AFA372700C5ACC1 /* MyRecipeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EEAB5952AFA372700C5ACC1 /* MyRecipeHeaderView.swift */; };
 		6EEAB5982AFA372E00C5ACC1 /* MyRecipeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6EEAB5972AFA372E00C5ACC1 /* MyRecipeHeaderView.xib */; };
+		6EF1B07B2B28330E00F01BE9 /* FileCreatedByPSAGC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6EF1B07A2B28330E00F01BE9 /* FileCreatedByPSAGC.swift */; };
 		B13ABCCC2B143D76006A2094 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ABCCB2B143D76006A2094 /* DetailRecipeViewController.swift */; };
 		B13ABCD42B155BD6006A2094 /* VideoPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B13ABCD32B155BD6006A2094 /* VideoPlayerViewController.swift */; };
 		B140A74A2AD8519100CFFC7B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B140A7492AD8519100CFFC7B /* AppDelegate.swift */; };
@@ -132,6 +133,7 @@
 		6EEAB5922AFA341700C5ACC1 /* MyRecipeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecipeCell.xib; sourceTree = "<group>"; };
 		6EEAB5952AFA372700C5ACC1 /* MyRecipeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyRecipeHeaderView.swift; sourceTree = "<group>"; };
 		6EEAB5972AFA372E00C5ACC1 /* MyRecipeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MyRecipeHeaderView.xib; sourceTree = "<group>"; };
+		6EF1B07A2B28330E00F01BE9 /* FileCreatedByPSAGC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileCreatedByPSAGC.swift; sourceTree = "<group>"; };
 		B13ABCCB2B143D76006A2094 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
 		B13ABCD32B155BD6006A2094 /* VideoPlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VideoPlayerViewController.swift; sourceTree = "<group>"; };
 		B140A7462AD8519100CFFC7B /* SpiceSaga.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpiceSaga.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -453,6 +455,7 @@
 				B140A7522AD8519300CFFC7B /* Assets.xcassets */,
 				B140A7542AD8519300CFFC7B /* LaunchScreen.storyboard */,
 				B140A7572AD8519300CFFC7B /* Info.plist */,
+				6EF1B07A2B28330E00F01BE9 /* FileCreatedByPSAGC.swift */,
 			);
 			path = SpiceSaga;
 			sourceTree = "<group>";
@@ -578,6 +581,7 @@
 				6E51E59E2AF8C07E009FF3DA /* UITableView+Extentions.swift in Sources */,
 				6E24B06F2B165E0A006D802A /* SpiceSaga.xcdatamodeld in Sources */,
 				B13ABCD42B155BD6006A2094 /* VideoPlayerViewController.swift in Sources */,
+				6EF1B07B2B28330E00F01BE9 /* FileCreatedByPSAGC.swift in Sources */,
 				6E823BD82ADF9F1600E03A11 /* LoginViewController.swift in Sources */,
 				6EA25DB52AE15E06005720C6 /* FirebaseRealTimeStorage.swift in Sources */,
 				6ECABEC02AFA90DC00262387 /* AddedIngredientsCell.swift in Sources */,
