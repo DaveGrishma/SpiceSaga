@@ -1,16 +1,15 @@
 //
-//  RecipeStepsCell.swift
+//  FilterCell.swift
 //  SpiceSaga
 //
-//  Created by Grishma Dave on 07/11/23.
+//  Created by Grishma Dave on 11/12/23.
 //
 
 import UIKit
 
-class RecipeStepsCell: UITableViewCell {
+class FilterCell: UITableViewCell {
 
-    @IBOutlet private var labelStep: UILabel!
-    
+    @IBOutlet private var labelFilterValue: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,10 +21,10 @@ class RecipeStepsCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
-    var step: String? {
+ 
+    var filter: FilterType? {
         didSet {
-            labelStep.text = step ?? ""
+            labelFilterValue.text = filter?.displayValue ?? ""
         }
     }
 }

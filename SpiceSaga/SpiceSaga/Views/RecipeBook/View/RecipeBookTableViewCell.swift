@@ -15,6 +15,7 @@ class RecipeBookTableViewCell: UITableViewCell {
     @IBOutlet private var imageViewRecipeThumb: UIImageView!
     @IBOutlet private var labelRecipeName: UILabel!
     @IBOutlet private var labelRecipeType: UILabel!
+    @IBOutlet private var labelCountry: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -35,7 +36,7 @@ class RecipeBookTableViewCell: UITableViewCell {
 //            imageViewUserProfile.kf.setImage(with: userUrl)
             labelRecipeName.text = recipeDetails?.name ?? ""
             labelRecipeType.text = recipeDetails?.type ?? ""
-            
+            labelCountry.text = recipeDetails?.region ?? ""
             let storageRef = Storage.storage().reference().child(recipeThumb)
             storageRef.downloadURL { (url, error) in
                 self.imageViewRecipeThumb.kf.setImage(with: url)

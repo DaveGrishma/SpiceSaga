@@ -1,16 +1,15 @@
 //
-//  RecipeStepsCell.swift
+//  SettingsCell.swift
 //  SpiceSaga
 //
-//  Created by Grishma Dave on 07/11/23.
+//  Created by Grishma Dave on 11/12/23.
 //
 
 import UIKit
 
-class RecipeStepsCell: UITableViewCell {
+class SettingsCell: UITableViewCell {
 
-    @IBOutlet private var labelStep: UILabel!
-    
+    @IBOutlet private var labelTitle: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -23,9 +22,9 @@ class RecipeStepsCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    var step: String? {
+    var settings: Settiings?{
         didSet {
-            labelStep.text = step ?? ""
+            labelTitle.text = settings?.name.title ?? ""
         }
     }
 }

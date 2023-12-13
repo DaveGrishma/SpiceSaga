@@ -2,7 +2,7 @@
 //  FirebaseAuthManager.swift
 //  SpiceSaga
 //
-//  Created by psagc on 19/10/23.
+//  Created by Grishma Dave on 19/10/23.
 //
 
 import UIKit

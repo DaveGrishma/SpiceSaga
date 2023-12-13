@@ -10,7 +10,10 @@ import AVKit
 import AVFoundation
 import Kingfisher
 import FirebaseStorage
-
+enum RecipeDetailsRoute {
+    case recipeBook
+    case savedRecipe(Recipe)
+}
 class DetailRecipeViewController: UIViewController {
 
     @IBOutlet private weak var lblType: UILabel?
@@ -32,6 +35,7 @@ class DetailRecipeViewController: UIViewController {
     var urlVC: String?
     var player: AVPlayer!
     var avpController = AVPlayerViewController()
+    var route: RecipeDetailsRoute = .recipeBook
     
     var recipeSteps:[String] = [String]()
     var ingregientsImages: [String] = [String]()
@@ -43,6 +47,23 @@ class DetailRecipeViewController: UIViewController {
     }
     
     private func setUp() {
+        switch route {
+        case .recipeBook:
+            setupRecipeDetails()
+        case .savedRecipe(let recipe):
+            FirebaseRMDatabase.shared.getRecipeDetails(id: recipe.id) { recipeDetails in
+                self.detailRecieps = recipeDetails
+                self.setupRecipeDetails()
+                self.collectionViewIngredients.reloadData()
+                self.tableViewRecipeSteps?.reloadData()
+            }
+        }
+        
+        
+        
+    }
+    
+    func setupRecipeDetails() {
         if let details = detailRecieps {
             let isSaved = SpiceSagaDataServices.shared.allSaveRecipes.contains(where: {$0.id == details.id})
             buttonSave.isSelected = isSaved
@@ -67,10 +88,9 @@ class DetailRecipeViewController: UIViewController {
             for (_ , value ) in detailRecieps?.ingredients ?? [:]{
                 ingregientsImages.append(value)
             }
+
         }
-        
     }
-    
     @IBAction private func didTapOnBack() {
         navigationController?.popViewController(animated: true)
     }

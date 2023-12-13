@@ -37,12 +37,15 @@
                                 <constraint firstAttribute="height" constant="20" id="Y6b-T1-nQG"/>
                             </constraints>
                         </imageView>
-                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search.." placeholder="Search.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SoO-s9-cXJ">
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" allowsEditingTextAttributes="YES" placeholder="Search.." minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SoO-s9-cXJ">
                             <rect key="frame" x="52" y="0.0" width="251" height="50"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="16"/>
                             <textInputTraits key="textInputTraits"/>
+                            <connections>
+                                <action selector="didStartedSearchWithSender:" destination="iN0-l3-epB" eventType="editingChanged" id="x32-Yf-W5c"/>
+                            </connections>
                         </textField>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVX-O9-6KW">
                             <rect key="frame" x="303" y="0.0" width="50" height="50"/>
@@ -54,6 +57,9 @@
                             <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                             <state key="normal" image="line.3.horizontal.decrease.circle" catalog="system"/>
+                            <connections>
+                                <action selector="didTapOnFilter" destination="iN0-l3-epB" eventType="touchUpInside" id="3LQ-D3-sJq"/>
+                            </connections>
                         </button>
                     </subviews>
                     <color key="backgroundColor" white="0.22531356292517007" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -93,6 +99,7 @@
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="labelUserName" destination="lgQ-oo-bJT" id="HRB-3Z-W5o"/>
+                <outlet property="textFieldSearch" destination="SoO-s9-cXJ" id="fbf-K8-u2U"/>
             </connections>
             <point key="canvasLocation" x="133.58778625954199" y="-215.14084507042256"/>
         </view>

@@ -2,7 +2,7 @@
 //  RecipeImagesViewController.swift
 //  SpiceSaga
 //
-//  Created by psagc on 07/11/23.
+//  Created by Grishma Dave on 07/11/23.
 //
 
 import UIKit
@@ -122,10 +122,12 @@ class RecipeImagesViewController: UIViewController {
             if let videoURL = videoURL , let details = self.recipeDetails, let user = FirebaseAuthManager.shared.currentUser{
                 let videoData = try Data(contentsOf: videoURL)
                 FirebaseRealTimeStorage.shared.uploadVideo(name: details.name, image: videoData) { url in
+                    var i = 0
                     self.hideLoader()
                     
                     let steps: [String: String] = self.recipeSteps.reduce(into: [:], { result, next in
-                        result[next] = next
+                        result["Step\(i)"] = next
+                        i += 1
                     })
 
                     if let vUrl = url {

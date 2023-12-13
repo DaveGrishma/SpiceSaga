@@ -2,7 +2,7 @@
 //  FirebaseRMDatabase.swift
 //  SpiceSaga
 //
-//  Created by psagc on 06/11/23.
+//  Created by Grishma Dave on 06/11/23.
 //
 
 import FirebaseDatabase
@@ -96,7 +96,7 @@ class FirebaseRMDatabase {
         
         let recipes = rootRef.reference(withPath: "RecipeApp").child("Recipes").childByAutoId()
         
-        let newRecipeId = recipes.key
+        let newRecipeId = recipes.key ?? ""
         recipes.setValue([
             "id": newRecipeId,
             "name": recipe.name,
@@ -110,7 +110,8 @@ class FirebaseRMDatabase {
             "userName": recipe.userName,
             "ingredients": recipe.ingredients,
             "duration": recipe.duration,
-            "steps": recipe.steps
+            "steps": recipe.steps,
+            "calories": recipe.calaroies
         ])
     }
     
@@ -151,6 +152,25 @@ class FirebaseRMDatabase {
                 print("Data removed successfully!")
             }
             complition()
+        }
+    }
+    
+    func getRecipeDetails(id: String,complition: @escaping(_ recipe: Recipe) -> Void) {
+        let recipes = rootRef.reference(withPath: "RecipeApp/Recipes/\(id)")
+        recipes.getData { errror, snapshot in
+            
+            print(snapshot) // Its print all values including Snap (User)
+            print(snapshot?.value!)
+                        
+            if let recipeDetails = (snapshot?.value as? [String: Any]){
+                
+                let userId = recipeDetails["userID"] as? String ?? ""
+                let cookingSteps = recipeDetails["steps"] as? [String: String] ?? [:]
+
+                let ingredients = recipeDetails["ingredients"] as? [String: String] ?? [:]
+                let recipeDetails: Recipe = Recipe(id: recipeDetails["id"] as? String ?? "",name: recipeDetails["name"] as? String ?? "", description: recipeDetails["desciption"] as? String ?? "", type: recipeDetails["type"] as? String ?? "", region: recipeDetails["region"] as? String ?? "", thumbUrl: recipeDetails["thumbUrl"] as? String ?? "", videoUrl: recipeDetails["videoUrl"] as? String ?? "", userID: userId, userName: recipeDetails["userName"] as? String ?? "", userProfileImage: recipeDetails["userProfileImage"] as? String ?? "",duration: recipeDetails["duration"] as? String ?? "",calaroies: recipeDetails["calories"] as? Int ?? 0,ingredients: ingredients, steps: cookingSteps)
+                complition(recipeDetails)
+            }
         }
     }
 }
