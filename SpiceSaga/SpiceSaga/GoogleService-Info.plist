@@ -26,5 +26,7 @@
 	<true></true>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:900835696722:ios:b63e7cba6331d3cdb77f8b</string>
+	<key>DATABASE_URL</key>
+	<string>https://recipeapp-86e78-default-rtdb.firebaseio.com</string>
 </dict>
 </plist>

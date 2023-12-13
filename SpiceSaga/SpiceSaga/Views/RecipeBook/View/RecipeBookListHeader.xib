@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RecipeBookListHeader" customModule="SpiceSaga" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="385" height="176"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="What would you like to cook today?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ykF-BE-dSz">
+                    <rect key="frame" x="16" y="47" width="353" height="60.333333333333343"/>
+                    <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="22"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="Good morning!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lgQ-oo-bJT">
+                    <rect key="frame" x="16" y="16" width="353" height="26"/>
+                    <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="19"/>
+                    <color key="textColor" red="0.4823529412" green="0.4823529412" blue="0.4823529412" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NnQ-ZK-paZ">
+                    <rect key="frame" x="16" y="115.33333333333331" width="353" height="50"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="magnifyingglass" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="yV1-zb-q6w">
+                            <rect key="frame" x="16" y="16.000000000000014" width="20" height="18.333333333333336"/>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="width" constant="20" id="DTs-3f-SLu"/>
+                                <constraint firstAttribute="height" constant="20" id="Y6b-T1-nQG"/>
+                            </constraints>
+                        </imageView>
+                        <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Search.." placeholder="Search.." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="SoO-s9-cXJ">
+                            <rect key="frame" x="52" y="0.0" width="251" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <color key="textColor" red="0.4823529411764706" green="0.4823529411764706" blue="0.4823529411764706" alpha="1" colorSpace="calibratedRGB"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XVX-O9-6KW">
+                            <rect key="frame" x="303" y="0.0" width="50" height="50"/>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="mTz-Dn-Hiw"/>
+                                <constraint firstAttribute="width" constant="50" id="pgZ-Jo-B5k"/>
+                            </constraints>
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                            <state key="normal" image="line.3.horizontal.decrease.circle" catalog="system"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" white="0.22531356292517007" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="XVX-O9-6KW" firstAttribute="top" secondItem="NnQ-ZK-paZ" secondAttribute="top" id="2KA-G4-0Ke"/>
+                        <constraint firstItem="yV1-zb-q6w" firstAttribute="centerY" secondItem="NnQ-ZK-paZ" secondAttribute="centerY" id="9im-4T-EYA"/>
+                        <constraint firstItem="SoO-s9-cXJ" firstAttribute="leading" secondItem="yV1-zb-q6w" secondAttribute="trailing" constant="16" id="Aqk-BI-oxN"/>
+                        <constraint firstItem="yV1-zb-q6w" firstAttribute="leading" secondItem="NnQ-ZK-paZ" secondAttribute="leading" constant="16" id="NbU-rG-LzP"/>
+                        <constraint firstAttribute="trailing" secondItem="XVX-O9-6KW" secondAttribute="trailing" id="bpV-NI-DAf"/>
+                        <constraint firstItem="SoO-s9-cXJ" firstAttribute="top" secondItem="NnQ-ZK-paZ" secondAttribute="top" id="g39-6s-wK6"/>
+                        <constraint firstAttribute="bottom" secondItem="SoO-s9-cXJ" secondAttribute="bottom" id="h4U-HK-iFW"/>
+                        <constraint firstAttribute="height" constant="50" id="mxQ-HJ-ecU"/>
+                        <constraint firstItem="XVX-O9-6KW" firstAttribute="leading" secondItem="SoO-s9-cXJ" secondAttribute="trailing" id="nFG-lN-h4O"/>
+                        <constraint firstAttribute="bottom" secondItem="XVX-O9-6KW" secondAttribute="bottom" id="tWF-nj-p8d"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                            <real key="value" value="10"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="NnQ-ZK-paZ" secondAttribute="trailing" constant="16" id="D2o-vI-V7c"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="ykF-BE-dSz" secondAttribute="trailing" constant="16" id="K7R-NN-AfZ"/>
+                <constraint firstItem="NnQ-ZK-paZ" firstAttribute="top" secondItem="ykF-BE-dSz" secondAttribute="bottom" constant="8" id="Pvq-ub-T75"/>
+                <constraint firstItem="lgQ-oo-bJT" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="16" id="T27-qb-7FW"/>
+                <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="NnQ-ZK-paZ" secondAttribute="bottom" constant="10" id="T2k-Sh-VUf"/>
+                <constraint firstAttribute="trailing" secondItem="lgQ-oo-bJT" secondAttribute="trailing" constant="16" id="TJN-TB-EdI"/>
+                <constraint firstItem="lgQ-oo-bJT" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="16" id="TMg-Mh-AtJ"/>
+                <constraint firstItem="ykF-BE-dSz" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="ZCv-2B-cZt"/>
+                <constraint firstItem="ykF-BE-dSz" firstAttribute="top" secondItem="lgQ-oo-bJT" secondAttribute="bottom" constant="5" id="b2A-71-P8B"/>
+                <constraint firstItem="NnQ-ZK-paZ" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="zvC-6K-dH7"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="labelUserName" destination="lgQ-oo-bJT" id="HRB-3Z-W5o"/>
+            </connections>
+            <point key="canvasLocation" x="133.58778625954199" y="-215.14084507042256"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="line.3.horizontal.decrease.circle" catalog="system" width="128" height="123"/>
+        <image name="magnifyingglass" catalog="system" width="128" height="117"/>
+    </resources>
+</document>

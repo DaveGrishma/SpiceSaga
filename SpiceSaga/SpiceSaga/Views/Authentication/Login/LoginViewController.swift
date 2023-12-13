@@ -33,18 +33,18 @@ class LoginViewController: UIViewController {
     
     @IBAction private func didTapOnSignIn() {
         guard let email = textEmail.text , let password = textPassword.text else { return  }
-        if !ValidateClass.isValidEmail(for: textEmail.text ?? "") {
+        if ValidateClass.isValidEmail(for: textEmail.text ?? "") {
             self.alertPresent(withTitle: "Invalid Email", message: "Please enter valid email")
+        } else if ValidateClass.isPasswordValid(for: textPassword.text ?? "") {
+            self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password")
+        } else {
+            viewModel.login(email: email, password: password) {
+                self.moveToHome()
+            } failure: {
+                self.alertPresent(withTitle: "Opps..", message: "Invalid email or password")
+            }
         }
         
-        if !ValidateClass.isPasswordValid(for: textPassword.text ?? "") {
-            self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password")
-        }
-        viewModel.login(email: email, password: password) {
-            self.moveToHome()
-        } failure: {
-            self.alertPresent(withTitle: "Opps..", message: "Invalid email or password")
-        }
     }
     
     private func moveToHome() {

@@ -8,6 +8,8 @@
 import UIKit
 import FirebaseCore
 import FirebaseAuth
+import SwiftLoader
+import CoreData
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,8 +23,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
 
+    static var shared: AppDelegate {
+        return (UIApplication.shared.delegate as? AppDelegate)!
+    }
     private func prepareApplication() {
         FirebaseApp.configure()
+        var config : SwiftLoader.Config = SwiftLoader.Config()
+        config.size = 150
+        config.spinnerColor = .orange
+        config.foregroundColor = .black
+        config.foregroundAlpha = 0.5
+        SwiftLoader.setConfig(config)
+        
         if Auth.auth().currentUser != nil {
             guard let loginVc = SpiceSagaStoryBoards.main.getViewController(LoginViewController.self) else { return }
             guard let tabVc = SpiceSagaStoryBoards.main.getViewController(HomeTabViewController.self) else { return }
@@ -30,11 +42,54 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             navigationVc.viewControllers = [tabVc]
             window?.rootViewController = navigationVc
         }
-        
+        FirebaseAuthManager.shared.setUpUserDetails()
     }
     
     
+    // MARK: - Core Data stack
 
+    lazy var persistentContainer: NSPersistentContainer = {
+        /*
+         The persistent container for the application. This implementation
+         creates and returns a container, having loaded the store for the
+         application to it. This property is optional since there are legitimate
+         error conditions that could cause the creation of the store to fail.
+        */
+        let container = NSPersistentContainer(name: "SpiceSaga")
+        container.loadPersistentStores(completionHandler: { (storeDescription, error) in
+            if let error = error as NSError? {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                 
+                /*
+                 Typical reasons for an error here include:
+                 * The parent directory does not exist, cannot be created, or disallows writing.
+                 * The persistent store is not accessible, due to permissions or data protection when the device is locked.
+                 * The device is out of space.
+                 * The store could not be migrated to the current model version.
+                 Check the error message to determine what the actual problem was.
+                 */
+                fatalError("Unresolved error \(error), \(error.userInfo)")
+            }
+        })
+        return container
+    }()
+
+    // MARK: - Core Data Saving support
+
+    func saveContext () {
+        let context = persistentContainer.viewContext
+        if context.hasChanges {
+            do {
+                try context.save()
+            } catch {
+                // Replace this implementation with code to handle the error appropriately.
+                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
+                let nserror = error as NSError
+                fatalError("Unresolved error \(nserror), \(nserror.userInfo)")
+            }
+        }
+    }
 
 }
 
