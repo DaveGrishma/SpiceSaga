@@ -58,15 +58,14 @@ class DetailRecipeViewController: UIViewController {
                 self.tableViewRecipeSteps?.reloadData()
             }
         }
-        
-        
-        
     }
     
     func setupRecipeDetails() {
         if let details = detailRecieps {
             let isSaved = SpiceSagaDataServices.shared.allSaveRecipes.contains(where: {$0.id == details.id})
             buttonSave.isSelected = isSaved
+            let shouldShow = details.userID == (FirebaseAuthManager.shared.currentUser?.userId ?? "")
+            buttonSave.isHidden = shouldShow
             lblType?.text = self.detailRecieps?.type
     //        lblRegion?.text = self.detailRecieps?.region
     //        lblDuration?.text = self.detailRecieps?.duration
@@ -120,9 +119,8 @@ class DetailRecipeViewController: UIViewController {
             storageRef.downloadURL { (videoUrl, error) in
                 self.player = AVPlayer(url: videoUrl!)
                 self.avpController.player = self.player
-                self.avpController.view.frame.size.height = self.videoView.frame.size.height
-                self.avpController.view.frame.size.width = self.videoView.frame.size.width
-                self.videoView.addSubview(self.avpController.view)
+                self.avpController.player?.play()
+                self.present(self.avpController, animated: true)
             }
         }
     }

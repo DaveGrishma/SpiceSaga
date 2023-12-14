@@ -9,6 +9,8 @@ import UIKit
 
 class SavedRecipeViewController: UIViewController {
 
+    @IBOutlet var labelNoSavedRecipe: UILabel!
+    
     var savedRecipes: [Recipe] = [Recipe]()
     
     override func viewDidLoad() {
@@ -20,6 +22,7 @@ class SavedRecipeViewController: UIViewController {
     
     private func prepareView() {
         savedRecipes.append(contentsOf: SpiceSagaDataServices.shared.allSaveRecipes)
+        labelNoSavedRecipe.isHidden = !SpiceSagaDataServices.shared.allSaveRecipes.isEmpty
     }
 
     // MARK: - Action Methods

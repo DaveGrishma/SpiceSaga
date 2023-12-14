@@ -10,6 +10,7 @@ import UIKit
 class MyRecipesViewController: UIViewController {
 
     @IBOutlet private var tableViewMyRecipes: UITableView!
+    @IBOutlet private var viewNoRecipeAdded: UIView!
     
     var myRecipes: [Recipe] = [Recipe]()
     
@@ -39,6 +40,7 @@ class MyRecipesViewController: UIViewController {
             self.myRecipes.append(contentsOf: recipes)
             DispatchQueue.main.async {
                 self.tableViewMyRecipes.reloadData()
+                self.viewNoRecipeAdded.isHidden = !self.myRecipes.isEmpty                
             }
         }
     }

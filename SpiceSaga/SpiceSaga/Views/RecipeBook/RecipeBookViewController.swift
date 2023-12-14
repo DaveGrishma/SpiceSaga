@@ -10,7 +10,8 @@ import UIKit
 class RecipeBookViewController: UIViewController {
     
     @IBOutlet var recipeTableView: UITableView!
-    
+    @IBOutlet var viewNoRecipe: UIView!
+    @IBOutlet var viewLoadingRecipes: UIView!
     
     var allRecieps: [Recipe] = [Recipe]()
     var filterRecipes: [Recipe] = [Recipe]()
@@ -27,6 +28,7 @@ class RecipeBookViewController: UIViewController {
     private func setUI() {
         navigationController?.navigationBar.isHidden = true
         let tableHeader = RecipeBookListHeader.shared
+        tableHeader.userName = FirebaseAuthManager.shared.currentUser?.userName ?? ""
         tableHeader.setupPlaceHolderForSearch()
         tableHeader.didSearch = { searchText in
             self.searchText = searchText
@@ -39,7 +41,7 @@ class RecipeBookViewController: UIViewController {
             tableHeader.userName = user.userName
         }
         recipeTableView.tableHeaderView = tableHeader
-        loadRecipes()
+        loadRecipes(showLoading: true)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshRecipes), name: .refreshRecipes, object: nil)
         let refresh = UIRefreshControl()
         recipeTableView.refreshControl = refresh
@@ -48,20 +50,20 @@ class RecipeBookViewController: UIViewController {
     
     @objc func refreshRecipes() {
         loadRecipes()
+        if var headerView = recipeTableView.tableHeaderView as? RecipeBookListHeader {
+            headerView.userName = FirebaseAuthManager.shared.currentUser?.userName ?? ""
+        }
     }
     
-    private func loadRecipes() {
+    private func loadRecipes(showLoading: Bool = false) {
+        viewLoadingRecipes.isHidden = !showLoading
         FirebaseRMDatabase.shared.getRecipes { recipes in
             self.allRecieps.removeAll()
             self.filterRecipes.removeAll()
             self.allRecieps.append(contentsOf: recipes)
             self.filterRecipes.append(contentsOf: recipes)
             self.reloadWithFilterData()
-            self.recipeTableView.refreshControl?.beginRefreshing()
-            DispatchQueue.main.async {
-                self.recipeTableView.refreshControl?.endRefreshing()
-                self.recipeTableView.reloadData()
-            }
+            self.viewLoadingRecipes.isHidden = true
         }
     }
     
@@ -104,7 +106,12 @@ class RecipeBookViewController: UIViewController {
         }
         
         self.filterRecipes = allFilteredRecipes
-        self.recipeTableView.reloadData()
+        self.recipeTableView.refreshControl?.beginRefreshing()
+        DispatchQueue.main.async {
+            self.recipeTableView.refreshControl?.endRefreshing()
+            self.recipeTableView.reloadData()
+            self.viewNoRecipe.isHidden = !self.filterRecipes.isEmpty
+        }
     }
 }
 extension RecipeBookViewController: UITableViewDataSource, UITableViewDelegate {

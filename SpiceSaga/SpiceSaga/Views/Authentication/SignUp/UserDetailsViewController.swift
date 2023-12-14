@@ -54,7 +54,7 @@ class UserDetailsViewController: UIViewController {
                 }
             }
         } else {
-            alertPresent(withTitle: "Wait", message: "Please add image")
+            alertPresent(withTitle: "Wait", message: "Please add profile picture.")
         }
     }
     

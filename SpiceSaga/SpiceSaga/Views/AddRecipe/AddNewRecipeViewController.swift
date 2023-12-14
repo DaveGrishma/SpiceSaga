@@ -85,7 +85,7 @@ class AddNewRecipeViewController: UIViewController {
     }
     
     @IBAction private func didTapOnNext() {
-        if textFieldRecipeName.text?.isEmpty ?? false {
+        if ValidateClass.isEmpty(for: textFieldRecipeName.text ?? "") {
             self.alertPresent(withTitle: "Error", message: "Please enter recipe name")
         } else if ingredients.isEmpty {
             self.alertPresent(withTitle: "Error", message: "Please add ingredient details")
@@ -99,7 +99,7 @@ class AddNewRecipeViewController: UIViewController {
     }
     
     @IBAction private func didTapOnAddIngredients() {
-        let alertSelectImage = UIAlertController(title: "Select Image", message: "Select thumbain image that will be visable to everyone.", preferredStyle: .actionSheet)
+        let alertSelectImage = UIAlertController(title: "Select Image", message: "Select ingredient image for your recipe.", preferredStyle: .actionSheet)
         alertSelectImage.addAction(UIAlertAction(title: "Camera", style: .default,handler: { _ in
             self.openImageController(source: .camera)
         }))
@@ -128,7 +128,16 @@ class AddNewRecipeViewController: UIViewController {
         }
     }
     
-    
+    private func removeIngredient(index: Int) {
+        let name = ingredients[index].name
+        let alertRemoveIngredient: UIAlertController = UIAlertController(title: "Remove", message: "Are you sure you want to remove \(name) ?", preferredStyle: .alert)
+        alertRemoveIngredient.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alertRemoveIngredient.addAction(UIAlertAction(title: "Remove", style: .destructive,handler: { _ in
+            self.ingredients.remove(at: index)
+            self.tableViewIngredient.reloadData()
+        }))
+        present(alertRemoveIngredient, animated: true)
+    }
 }
 extension AddNewRecipeViewController: UIImagePickerControllerDelegate & UINavigationControllerDelegate{
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -151,6 +160,9 @@ extension AddNewRecipeViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.registerAndGetCell(AddedIngredientsCell.self)
         cell.detail = ingredients[indexPath.row]
+        cell.removeIngredient = {
+            self.removeIngredient(index: indexPath.row)
+        }
         return cell
     }
     

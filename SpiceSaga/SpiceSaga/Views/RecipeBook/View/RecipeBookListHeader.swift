@@ -21,13 +21,14 @@ class RecipeBookListHeader: UIView {
 
     var userName: String? {
         didSet {
+            
             labelUserName.text = "Hello, \(userName ?? "")"
         }
     }
     
     func setupPlaceHolderForSearch() {
         textFieldSearch.attributedPlaceholder = NSAttributedString(
-            string: "Search..",
+            string: "Search recipe..",
             attributes: [NSAttributedString.Key.foregroundColor: UIColor.white]
         )
     }

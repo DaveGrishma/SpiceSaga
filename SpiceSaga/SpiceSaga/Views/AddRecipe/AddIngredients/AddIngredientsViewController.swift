@@ -34,7 +34,7 @@ class AddIngredientsViewController: UIViewController {
     }
 
     @IBAction private func didTapOnAdd() {
-        if textFieldAddIngredient.text?.isEmpty ?? false {
+        if ValidateClass.isEmpty(for: textFieldAddIngredient.text ?? ""){
             alertPresent(withTitle: "Error", message: "Please enter valid ingredient name")
         } else {
             guard let image = imageViewIngredient?.image else { return  }
@@ -42,5 +42,9 @@ class AddIngredientsViewController: UIViewController {
             didAddedIngredient?(ingredient)
             dismiss(animated: true)
         }
+    }
+    
+    @IBAction private func didTapOnBack() {
+        dismiss(animated: true)
     }
 }

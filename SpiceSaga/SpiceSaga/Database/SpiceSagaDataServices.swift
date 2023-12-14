@@ -87,4 +87,23 @@ class SpiceSagaDataServices {
         }
         save()
     }
+    
+    func deleteAllData() {        
+        let entityNames = AppDelegate.shared.persistentContainer.managedObjectModel.entities.map({$0.name})
+         entityNames.forEach { [weak self] entityName in
+             if let name = entityName {
+                 let deleteFetch = NSFetchRequest<NSFetchRequestResult>(entityName: name)
+                 let deleteRequest = NSBatchDeleteRequest(fetchRequest: deleteFetch)
+
+                 do {
+                     try self?.persistantManager.execute(deleteRequest)
+                     try self?.persistantManager.save()
+                 } catch {
+                     // error
+                     print("Error Deleteing all locatl data")
+                 }
+             }
+            
+        }
+    }
 }

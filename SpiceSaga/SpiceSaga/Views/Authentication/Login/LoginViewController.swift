@@ -38,9 +38,12 @@ class LoginViewController: UIViewController {
         } else if password.isEmpty {
             self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password")
         } else {
+            showLoader()
             viewModel.login(email: email, password: password) {
+                self.hideLoader()
                 self.moveToHome()
             } failure: {
+                self.hideLoader()
                 self.alertPresent(withTitle: "Opps..", message: "Invalid email or password")
             }
         }

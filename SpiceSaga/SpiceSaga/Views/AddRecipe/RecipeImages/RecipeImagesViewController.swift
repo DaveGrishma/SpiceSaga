@@ -31,6 +31,8 @@ class RecipeImagesViewController: UIViewController {
     var videoURL: URL?
     var ingredientsDetails: [String: String] = [:]
     var thumailUrl: String = ""
+    var isVideoSelected: Bool = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -51,6 +53,7 @@ class RecipeImagesViewController: UIViewController {
         alertStep.addAction(UIAlertAction(title: "Cancel", style: .cancel))
         alertStep.addAction(UIAlertAction(title: "Add", style: .default,handler: { _ in
             if let stepDetails = alertStep.textFields?[0].text {
+                self.step += 1
                 self.recipeSteps.append(stepDetails)
                 self.tableViewSteps.reloadData()
                 self.labelAddStepPlaceHolder.isHidden = true
@@ -64,18 +67,23 @@ class RecipeImagesViewController: UIViewController {
     }
 
     @IBAction private func didTapOnPublish() {
-        if let ingredient = recipeDetails?.ingredients.first{
-            showLoader(message: "Please wait while uploading..")
-            uploadIngredients(ingredients: ingredient)
+        if !isVideoSelected {
+            self.alertPresent(withTitle: "No video", message: "Please select video of your recipe. click on the Upload Video and select the video.")
+        } else if self.recipeSteps.isEmpty {
+            self.alertPresent(withTitle: "No cooking steps", message: "Please add cooking steps for your recipe for others your delisuis recipe")
+        } else {
+            if let ingredient = recipeDetails?.ingredients.first{
+                showLoader(message: "Please wait while uploading..")
+                uploadIngredients(ingredients: ingredient)
+            }
         }
-        
     }
     @IBAction private func didTapOnUploadVideo() {
         let imagePickerController = UIImagePickerController()
         imagePickerController.sourceType = .photoLibrary
-          imagePickerController.delegate = self
-          imagePickerController.mediaTypes = ["public.movie"]
-
+        imagePickerController.delegate = self
+        imagePickerController.mediaTypes = ["public.movie"]
+        
         present(imagePickerController, animated: true, completion: nil)
     }
     
@@ -145,6 +153,16 @@ class RecipeImagesViewController: UIViewController {
             print(error.localizedDescription)
         }
     }
+    
+    private func removeStep(index: Int) {
+        let alertRemoveStep: UIAlertController = UIAlertController(title: "Remove Step", message: "Are you sure you want to remove this step?", preferredStyle: .alert)
+        alertRemoveStep.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+        alertRemoveStep.addAction(UIAlertAction(title: "Remove", style: .destructive, handler: { _ in
+            self.recipeSteps.remove(at: index)
+            self.tableViewSteps.reloadData()
+        }))
+        present(alertRemoveStep, animated: true)
+    }
 }
 extension RecipeImagesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -153,6 +171,9 @@ extension RecipeImagesViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.registerAndGetCell(RecipeStepsCell.self)
         cell.step = recipeSteps[indexPath.row]
+        cell.removeStep = {
+            self.removeStep(index: indexPath.row)
+        }
         return cell
     }
 }
@@ -163,6 +184,7 @@ extension RecipeImagesViewController: UIImagePickerControllerDelegate & UINaviga
             if let vUrl =  info[UIImagePickerController.InfoKey.mediaURL] as? URL {
                 self.videoURL = vUrl
                 self.imageViewThumbnail.image = self.getThumbnailImage(forUrl: vUrl)
+                self.isVideoSelected = true
             }
             print("videoURL:\(String(describing: self.videoURL))")
             

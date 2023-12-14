@@ -35,6 +35,9 @@
                         <state key="normal">
                             <imageReference key="image" image="minus.circle.fill" catalog="system" symbolScale="large"/>
                         </state>
+                        <connections>
+                            <action selector="didTapOnRemove" destination="KGk-i7-Jjw" eventType="touchUpInside" id="w9O-Di-DLw"/>
+                        </connections>
                     </button>
                 </subviews>
                 <constraints>

@@ -27,7 +27,9 @@ class AppSettingsViewController: UIViewController {
         
         
         AVCaptureDevice.requestAccess(for: AVMediaType.video) { response in
-            self.switchCamara.isOn = response
+            DispatchQueue.main.async {
+                self.switchCamara.isOn = response
+            }
         }
     }
     /*

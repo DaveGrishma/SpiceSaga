@@ -20,6 +20,7 @@ class IngredientsCell: UICollectionViewCell {
 
     var ingredientImage: String?{
         didSet {
+            self.imageViewIngredients.kf.indicatorType = .activity            
             guard let imageUrlString = ingredientImage else { return  }
             let storageRef = Storage.storage().reference().child(imageUrlString)
             storageRef.downloadURL { (url, error) in

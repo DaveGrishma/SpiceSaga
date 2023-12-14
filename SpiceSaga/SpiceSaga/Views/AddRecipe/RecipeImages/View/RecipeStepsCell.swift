@@ -11,6 +11,7 @@ class RecipeStepsCell: UITableViewCell {
 
     @IBOutlet private var labelStep: UILabel!
     
+    var removeStep:(() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -27,5 +28,9 @@ class RecipeStepsCell: UITableViewCell {
         didSet {
             labelStep.text = step ?? ""
         }
+    }
+    
+    @IBAction private func didTapOnRemove() {
+        removeStep?()
     }
 }

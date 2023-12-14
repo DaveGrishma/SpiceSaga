@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -32,15 +34,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yzu-0M-9IR">
+                                <rect key="frame" x="328" y="13" width="30" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="6X1-eK-k6q"/>
+                                    <constraint firstAttribute="width" constant="30" id="6vP-Zb-Emk"/>
+                                </constraints>
+                                <color key="tintColor" systemColor="systemRedColor"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" image="minus.circle.fill" catalog="system"/>
+                                <connections>
+                                    <action selector="didTapOnRemove" destination="KGk-i7-Jjw" eventType="touchUpInside" id="RR0-mN-SGQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="0.22531356289999999" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="zc0-qT-xo5" firstAttribute="leading" secondItem="ZI1-r9-BLe" secondAttribute="leading" constant="8" id="1OV-eN-sS2"/>
+                            <constraint firstAttribute="trailing" secondItem="yzu-0M-9IR" secondAttribute="trailing" constant="16" id="8Nt-xV-ddD"/>
                             <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="zc0-qT-xo5" secondAttribute="bottom" constant="8" id="CFp-4B-CJj"/>
                             <constraint firstItem="ggj-Di-M6M" firstAttribute="centerY" secondItem="zc0-qT-xo5" secondAttribute="centerY" id="EOs-Ov-cgG"/>
-                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ggj-Di-M6M" secondAttribute="trailing" constant="16" id="Pyb-PV-OWe"/>
+                            <constraint firstItem="yzu-0M-9IR" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ggj-Di-M6M" secondAttribute="trailing" constant="10" id="PkI-3O-gzg"/>
                             <constraint firstItem="zc0-qT-xo5" firstAttribute="top" secondItem="ZI1-r9-BLe" secondAttribute="top" constant="8" id="gwm-OF-jLQ"/>
                             <constraint firstItem="ggj-Di-M6M" firstAttribute="leading" secondItem="zc0-qT-xo5" secondAttribute="trailing" constant="16" id="j0c-9D-9JN"/>
+                            <constraint firstItem="yzu-0M-9IR" firstAttribute="centerY" secondItem="zc0-qT-xo5" secondAttribute="centerY" id="m8z-Bb-pce"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
@@ -66,4 +83,10 @@
             <point key="canvasLocation" x="112.97709923664122" y="39.08450704225352"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="minus.circle.fill" catalog="system" width="128" height="123"/>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
 </document>

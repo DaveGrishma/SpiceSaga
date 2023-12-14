@@ -62,31 +62,31 @@ class FirebaseRMDatabase {
     
     static var shared: FirebaseRMDatabase = FirebaseRMDatabase()
     private let rootRef = Database.database()
+    private var allRecipes: [Recipe] = [Recipe]()
     
     func getRecipes(complition: @escaping(_ recipes: [Recipe]) -> Void) {
         let recipes = rootRef.reference(withPath: "RecipeApp/Recipes")
         
         recipes.getData { errror, snapshot in
             
-            var recipes:[Recipe] = [Recipe]()
-            print(snapshot) // Its print all values including Snap (User)
-            print(snapshot?.value!)
-                        
             if let allRecipes   = snapshot?.children.allObjects as? [DataSnapshot] {
+                self.allRecipes.removeAll()
                 for details in allRecipes {
                     
                     if let recipeDetails = (details.value as? [String: Any]){
                         let ingredients = recipeDetails["ingredients"] as? [String: String] ?? [:]
                         let cookingSteps = recipeDetails["steps"] as? [String: String] ?? [:]
                         
-                        recipes.append(Recipe(id: recipeDetails["id"] as? String ?? "",name: recipeDetails["name"] as? String ?? "", description: recipeDetails["desciption"] as? String ?? "", type: recipeDetails["type"] as? String ?? "", region: recipeDetails["region"] as? String ?? "", thumbUrl: recipeDetails["thumbUrl"] as? String ?? "", videoUrl: recipeDetails["videoUrl"] as? String ?? "", userID: recipeDetails["userID"] as? String ?? "", userName: recipeDetails["userName"] as? String ?? "", userProfileImage: "https://firebasestorage.googleapis.com:443/v0/b/recipeapp-86e78.appspot.com/o/C2C51527-C30C-4E24-A396-44A989309172.png?alt=media&token=b9252216-18a9-41e7-87f5-ef21032b673a",duration: recipeDetails["duration"] as? String ?? "",calaroies: recipeDetails["calories"] as? Int ?? 0,ingredients: ingredients, steps: cookingSteps))
+                        let recipeDetails = Recipe(id: recipeDetails["id"] as? String ?? "",name: recipeDetails["name"] as? String ?? "", description: recipeDetails["desciption"] as? String ?? "", type: recipeDetails["type"] as? String ?? "", region: recipeDetails["region"] as? String ?? "", thumbUrl: recipeDetails["thumbUrl"] as? String ?? "", videoUrl: recipeDetails["videoUrl"] as? String ?? "", userID: recipeDetails["userID"] as? String ?? "", userName: recipeDetails["userName"] as? String ?? "", userProfileImage: "https://firebasestorage.googleapis.com:443/v0/b/recipeapp-86e78.appspot.com/o/C2C51527-C30C-4E24-A396-44A989309172.png?alt=media&token=b9252216-18a9-41e7-87f5-ef21032b673a",duration: recipeDetails["duration"] as? String ?? "",calaroies: recipeDetails["calories"] as? Int ?? 0,ingredients: ingredients, steps: cookingSteps)
+                        
+                        self.allRecipes.append(recipeDetails)
                     }
                     
                     
                     
                     
                 }
-                complition(recipes)
+                complition(self.allRecipes.reversed())
             }
         }
         
@@ -172,5 +172,19 @@ class FirebaseRMDatabase {
                 complition(recipeDetails)
             }
         }
+    }
+    
+    func updateusernameForRecipes(userId: String,name: String) {
+        let myRecipes = self.allRecipes.filter({$0.userID == userId})
+        var updateName: [String: String] = [:]
+        
+        for recipe in myRecipes {
+            updateName["RecipeApp/Recipes/\(recipe.id)/userName"] = name
+        }
+        rootRef.reference().updateChildValues(updateName)
+    }
+    
+    var numberOfRecipes: Int {
+        return allRecipes.filter({$0.userID == FirebaseAuthManager.shared.userID}).count
     }
 }

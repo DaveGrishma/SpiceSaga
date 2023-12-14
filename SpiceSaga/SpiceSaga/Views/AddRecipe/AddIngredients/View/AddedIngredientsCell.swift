@@ -12,6 +12,8 @@ class AddedIngredientsCell: UITableViewCell {
     @IBOutlet var imageViewIngredient: UIImageView!
     @IBOutlet var labelIngredientName: UILabel!
     
+    var removeIngredient:(() -> ())?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -29,5 +31,10 @@ class AddedIngredientsCell: UITableViewCell {
             imageViewIngredient.image = image
             labelIngredientName.text = detail?.name ?? ""
         }
+    }
+    
+    // MARK: - Action methods
+    @IBAction private func didTapOnRemove() {
+        removeIngredient?()
     }
 }
