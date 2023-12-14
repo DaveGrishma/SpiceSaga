@@ -38,8 +38,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         if Auth.auth().currentUser != nil {
             guard let loginVc = SpiceSagaStoryBoards.main.getViewController(LoginViewController.self) else { return }
             guard let tabVc = SpiceSagaStoryBoards.main.getViewController(HomeTabViewController.self) else { return }
-            let navigationVc: UINavigationController = UINavigationController(rootViewController: loginVc)
-            navigationVc.viewControllers = [tabVc]
+            let navigationVc: UINavigationController = UINavigationController()
+            navigationVc.viewControllers = [loginVc,tabVc]
             window?.rootViewController = navigationVc
         }
         FirebaseAuthManager.shared.setUpUserDetails()

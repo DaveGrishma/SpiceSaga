@@ -10,9 +10,14 @@ import UIKit
 class RecipeBookViewController: UIViewController {
     
     @IBOutlet var recipeTableView: UITableView!
-    
+    @IBOutlet var viewNoRecipe: UIView!
+    @IBOutlet var viewLoadingRecipes: UIView!
     
     var allRecieps: [Recipe] = [Recipe]()
+    var filterRecipes: [Recipe] = [Recipe]()
+    var filterRecipeType: RecipeType = .all
+    var filterRegion: RecipeReligionFilter = .all
+    var searchText: String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,43 +28,104 @@ class RecipeBookViewController: UIViewController {
     private func setUI() {
         navigationController?.navigationBar.isHidden = true
         let tableHeader = RecipeBookListHeader.shared
+        tableHeader.userName = FirebaseAuthManager.shared.currentUser?.userName ?? ""
+        tableHeader.setupPlaceHolderForSearch()
+        tableHeader.didSearch = { searchText in
+            self.searchText = searchText
+            self.searchFor(text: searchText)
+        }
+        tableHeader.didSelectedFilter = {
+            self.moveToFilter()
+        }
         if let user = FirebaseAuthManager.shared.currentUser {
             tableHeader.userName = user.userName
         }
         recipeTableView.tableHeaderView = tableHeader
-        loadRecipes()
-        // FirebaseRMDatabase.shared.addNewRecipe(recipe: Recipe(name: "Creamy Garlic Lemon Pasta", description: "This creamy garlic lemon pasta is a quick and delightful dish that combines the flavors of garlic and fresh lemon with a velvety cream sauce. It's a perfect balance of richness and zest, making it a satisfying yet refreshing meal.", type: "Lunch", region: "India", thumbUrl: "https://pinchandswirl.com/wp-content/uploads/2021/12/Lemon-Garlic-Chicken-Pasta__.jpg", videoUrl: "https://pinchandswirl.com/wp-content/uploads/2021/12/Lemon-Garlic-Chicken-Pasta__.jpg", userID: "abvx6rw6r4PDQ9pZoFWdpcajgIB3", userName: "Grishma Dave", userProfileImage: "https://firebasestorage.googleapis.com/v0/b/recipeapp-86e78.appspot.com/o/abvx6rw6r4PDQ9pZoFWdpcajgIB3.png?alt=media&token=445ef71d-a73f-42cf-bd2c-77d26e403d9e&_gl=1*1tibwdv*_ga*NTQ4MDAzOTcyLjE2OTU5ODcyODk.*_ga_CW55HF8NVT*MTY5OTI1MTIxOS4xNS4xLjE2OTkyNTE5MTguMjAuMC4w",duration: "120 Min",calaroies: 20, ingredients: ["butter":"https://cdn.britannica.com/27/122027-050-EAA86783/Butter.jpg","Garlic":"https://andamangreengrocers.com/wp-content/uploads/2021/12/garlic.jpg","Lemon":"https://www.starhealth.in/blog/wp-content/uploads/2022/07/Picture-of-lemons-cut-in-halves.jpg"]))
+        loadRecipes(showLoading: true)
         NotificationCenter.default.addObserver(self, selector: #selector(refreshRecipes), name: .refreshRecipes, object: nil)
-        
+        let refresh = UIRefreshControl()
+        recipeTableView.refreshControl = refresh
+        refresh.addTarget(self, action: #selector(refreshRecipes), for: .valueChanged)
     }
     
     @objc func refreshRecipes() {
         loadRecipes()
-    }
-    
-    private func loadRecipes() {
-        FirebaseRMDatabase.shared.getRecipes { recipes in
-            self.allRecieps.removeAll()
-            self.allRecieps.append(contentsOf: recipes)
-            DispatchQueue.main.async {
-                self.recipeTableView.reloadData()
-            }
+        if var headerView = recipeTableView.tableHeaderView as? RecipeBookListHeader {
+            headerView.userName = FirebaseAuthManager.shared.currentUser?.userName ?? ""
         }
     }
     
+    private func loadRecipes(showLoading: Bool = false) {
+        viewLoadingRecipes.isHidden = !showLoading
+        FirebaseRMDatabase.shared.getRecipes { recipes in
+            self.allRecieps.removeAll()
+            self.filterRecipes.removeAll()
+            self.allRecieps.append(contentsOf: recipes)
+            self.filterRecipes.append(contentsOf: recipes)
+            self.reloadWithFilterData()
+            self.viewLoadingRecipes.isHidden = true
+        }
+    }
+    
+    private func searchFor(text: String) {
+        filterRecipes.removeAll()
+        let arraySearch = allRecieps.filter({$0.name.lowercased().hasPrefix(text.lowercased())})
+        filterRecipes.append(contentsOf: arraySearch)
+        self.recipeTableView.reloadData()
+    }
+    
+    private func moveToFilter() {
+        
+        if let filterVc = SpiceSagaStoryBoards.main.getViewController(FilterViewController.self) {
+            filterVc.filterRecipeType = self.filterRecipeType
+            filterVc.filterRegion = self.filterRegion
+            filterVc.didFinishedWithFilters = { recipeRegion, recipeType in
+                self.filterRecipeType = recipeType
+                self.filterRegion = recipeRegion
+                self.reloadWithFilterData()
+            }
+            present(filterVc, animated: true)
+        }
+    }
+    
+    func reloadWithFilterData() {
+        var allFilteredRecipes = [Recipe]()
+        
+        if filterRecipeType != .all {
+            allFilteredRecipes = self.allRecieps.filter({$0.type.lowercased().hasPrefix(filterRecipeType.displayValue.lowercased())})
+        } else {
+            allFilteredRecipes = self.allRecieps
+        }
+        
+        if filterRegion != .all {
+            allFilteredRecipes = allFilteredRecipes.filter({$0.region.lowercased().hasPrefix(filterRegion.displayValue.lowercased())})
+        }
+        
+        if !self.searchText.isEmpty {
+            allFilteredRecipes = allFilteredRecipes.filter({$0.name.lowercased().hasPrefix(self.searchText.lowercased())})
+        }
+        
+        self.filterRecipes = allFilteredRecipes
+        self.recipeTableView.refreshControl?.beginRefreshing()
+        DispatchQueue.main.async {
+            self.recipeTableView.refreshControl?.endRefreshing()
+            self.recipeTableView.reloadData()
+            self.viewNoRecipe.isHidden = !self.filterRecipes.isEmpty
+        }
+    }
 }
 extension RecipeBookViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allRecieps.count
+        return filterRecipes.count
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.registerAndGetCell(RecipeBookTableViewCell.self)
-        cell.recipeDetails = allRecieps[indexPath.row]
+        cell.recipeDetails = filterRecipes[indexPath.row]
         return cell
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         guard let detailRecipeVc = SpiceSagaStoryBoards.main.getViewController(DetailRecipeViewController.self) else { return  }
-        detailRecipeVc.detailRecieps = self.allRecieps[indexPath.row]
+        detailRecipeVc.detailRecieps = self.filterRecipes[indexPath.row]
         navigationController?.pushViewController(detailRecipeVc, animated: true)
     }
 }

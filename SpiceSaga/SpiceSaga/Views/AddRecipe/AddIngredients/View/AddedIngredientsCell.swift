@@ -2,7 +2,7 @@
 //  AddedIngredientsCell.swift
 //  SpiceSaga
 //
-//  Created by psagc on 07/11/23.
+//  Created by Grishma Dave on 07/11/23.
 //
 
 import UIKit
@@ -11,6 +11,8 @@ class AddedIngredientsCell: UITableViewCell {
 
     @IBOutlet var imageViewIngredient: UIImageView!
     @IBOutlet var labelIngredientName: UILabel!
+    
+    var removeIngredient:(() -> ())?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,5 +31,10 @@ class AddedIngredientsCell: UITableViewCell {
             imageViewIngredient.image = image
             labelIngredientName.text = detail?.name ?? ""
         }
+    }
+    
+    // MARK: - Action methods
+    @IBAction private func didTapOnRemove() {
+        removeIngredient?()
     }
 }

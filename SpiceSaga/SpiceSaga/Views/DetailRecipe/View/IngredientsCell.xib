@@ -17,12 +17,18 @@
                 <rect key="frame" x="0.0" y="0.0" width="116" height="99"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IoW-RY-dhY">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="IoW-RY-dhY">
                         <rect key="frame" x="0.0" y="0.0" width="116" height="99"/>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="5"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
                     </imageView>
                 </subviews>
             </view>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="IoW-RY-dhY" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="250-Qr-7PW"/>
                 <constraint firstItem="IoW-RY-dhY" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Cz1-q6-DKF"/>
@@ -30,6 +36,11 @@
                 <constraint firstAttribute="bottom" secondItem="IoW-RY-dhY" secondAttribute="bottom" id="svb-kc-2q0"/>
             </constraints>
             <size key="customSize" width="116" height="99"/>
+            <userDefinedRuntimeAttributes>
+                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                    <real key="value" value="5"/>
+                </userDefinedRuntimeAttribute>
+            </userDefinedRuntimeAttributes>
             <connections>
                 <outlet property="imageViewIngredients" destination="IoW-RY-dhY" id="PFP-cg-geX"/>
             </connections>

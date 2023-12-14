@@ -2,7 +2,7 @@
 //  SignUpViewController.swift
 //  SpiceSaga
 //
-//  Created by psagc on 18/10/23.
+//  Created by Grishma Dave on 18/10/23.
 //
 
 import UIKit
@@ -29,12 +29,12 @@ class SignUpViewController: UIViewController {
     
     @IBAction private func didTapOnNext() {
         
-        if ValidateClass.isValidUsername(for: textName.text ?? "") {
+        if !ValidateClass.isValidUsername(for: textName.text ?? "") {
             self.alertPresent(withTitle: "Invalid Username", message: "Please enter valid username")
-        } else if (textEmail.text ?? "").isEmpty {
+        } else if !ValidateClass.isValidEmail(for: (textEmail.text ?? "")) {
             self.alertPresent(withTitle: "Invalid Email", message: "Please enter valid email")
-        } else if (textPassword.text ?? "").isEmpty {
-            self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password")
+        } else if !ValidateClass.isPasswordValid(for: (textPassword.text ?? "")) {
+            self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password. password shuold be 6 to 8 character and should contain 1 Alphabet and 1 spacial character.")
         } else {
             if let userDetailsVc = SpiceSagaStoryBoards.main.getViewController(UserDetailsViewController.self) {
                 userDetailsVc.textName = textName.text

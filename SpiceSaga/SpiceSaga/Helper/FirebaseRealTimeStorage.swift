@@ -2,7 +2,7 @@
 //  FirebaseRealTimeStorage.swift
 //  SpiceSaga
 //
-//  Created by psagc on 19/10/23.
+//  Created by Grishma Dave on 19/10/23.
 //
 
 import Foundation
@@ -38,13 +38,7 @@ class FirebaseRealTimeStorage {
         }
         
     }
-    func temp() {
-        let storageRef = Storage.storage().reference().child("060C1ADB-0744-4FB4-BB77-090DB20C1276.png")
-        storageRef.downloadURL { (url, error) in
-            print(url)
-        }
-        
-    }
+   
     func uploadImage(name: String,image: Data,completion: @escaping(_ url: String?) -> Void) {
         let name = UUID().uuidString + ".png"
         let storageRef = Storage.storage().reference().child(name)

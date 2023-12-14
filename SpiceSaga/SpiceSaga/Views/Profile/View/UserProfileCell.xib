@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="22154" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="22130"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="175" id="KGk-i7-Jjw" customClass="UserProfileCell" customModule="SpiceSaga" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="410" height="175"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="410" height="175"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="kingfisher-5.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="8CP-UG-AnD">
+                        <rect key="frame" x="16" y="10" width="80" height="80"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="80" id="BPU-TS-lpB"/>
+                            <constraint firstAttribute="width" constant="80" id="Dqc-EX-HOd"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                <real key="value" value="40"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grishma Dave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qmc-Q8-xZK">
+                        <rect key="frame" x="112" y="20" width="282" height="24"/>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="17"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <button opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Xn-Fw-hrN">
+                        <rect key="frame" x="112" y="64.666666666666671" width="122" height="33"/>
+                        <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="15"/>
+                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        <state key="normal" title="Tap to edit profile"/>
+                    </button>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grishma Dave" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fKY-XJ-hKq">
+                        <rect key="frame" x="112" y="46" width="282" height="16.666666666666671"/>
+                        <fontDescription key="fontDescription" name="Avenir-Light" family="Avenir" pointSize="12"/>
+                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <color key="backgroundColor" red="0.17254901960784313" green="0.17254901960784313" blue="0.17254901960784313" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                <constraints>
+                    <constraint firstItem="8CP-UG-AnD" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="16" id="8Uv-Xg-G6V"/>
+                    <constraint firstItem="fKY-XJ-hKq" firstAttribute="top" secondItem="qmc-Q8-xZK" secondAttribute="bottom" constant="2" id="JHb-kh-HuB"/>
+                    <constraint firstItem="qmc-Q8-xZK" firstAttribute="top" secondItem="8CP-UG-AnD" secondAttribute="top" constant="10" id="NGH-Ng-fzc"/>
+                    <constraint firstItem="qmc-Q8-xZK" firstAttribute="leading" secondItem="8CP-UG-AnD" secondAttribute="trailing" constant="16" id="PBu-Q1-RTj"/>
+                    <constraint firstAttribute="trailing" secondItem="fKY-XJ-hKq" secondAttribute="trailing" constant="16" id="Qpd-Ub-NC2"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8CP-UG-AnD" secondAttribute="bottom" constant="10" id="biH-S4-fBP"/>
+                    <constraint firstItem="4Xn-Fw-hrN" firstAttribute="leading" secondItem="8CP-UG-AnD" secondAttribute="trailing" constant="16" id="f8I-zw-STQ"/>
+                    <constraint firstItem="8CP-UG-AnD" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="10" id="i1r-VE-dEm"/>
+                    <constraint firstItem="4Xn-Fw-hrN" firstAttribute="top" secondItem="fKY-XJ-hKq" secondAttribute="bottom" constant="2" id="miR-HD-s8j"/>
+                    <constraint firstItem="fKY-XJ-hKq" firstAttribute="leading" secondItem="8CP-UG-AnD" secondAttribute="trailing" constant="16" id="vOq-Wz-yX0"/>
+                    <constraint firstAttribute="trailing" secondItem="qmc-Q8-xZK" secondAttribute="trailing" constant="16" id="x32-92-7Bq"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="imageViewUserProfile" destination="8CP-UG-AnD" id="8xZ-IB-7QK"/>
+                <outlet property="labelEmail" destination="fKY-XJ-hKq" id="gx7-Md-WTg"/>
+                <outlet property="labelUserName" destination="qmc-Q8-xZK" id="6kR-cR-sui"/>
+            </connections>
+            <point key="canvasLocation" x="140.45801526717557" y="65.845070422535215"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="kingfisher-5.jpg" width="250" height="250"/>
+    </resources>
+</document>

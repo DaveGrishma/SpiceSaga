@@ -2,7 +2,7 @@
 //  UITableView+Extentions.swift
 //  SpiceSaga
 //
-//  Created by psagc on 06/11/23.
+//  Created by Grishma Dave on 06/11/23.
 //
 
 import UIKit

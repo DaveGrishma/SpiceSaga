@@ -2,7 +2,7 @@
 //  IngredientsCell.swift
 //  SpiceSaga
 //
-//  Created by psagc on 28/11/23.
+//  Created by Grishma Dave on 28/11/23.
 //
 
 import UIKit
@@ -20,6 +20,7 @@ class IngredientsCell: UICollectionViewCell {
 
     var ingredientImage: String?{
         didSet {
+            self.imageViewIngredients.kf.indicatorType = .activity            
             guard let imageUrlString = ingredientImage else { return  }
             let storageRef = Storage.storage().reference().child(imageUrlString)
             storageRef.downloadURL { (url, error) in

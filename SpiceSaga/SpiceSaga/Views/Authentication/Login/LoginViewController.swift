@@ -2,7 +2,7 @@
 //  LoginViewController.swift
 //  SpiceSaga
 //
-//  Created by psagc on 18/10/23.
+//  Created by Grishma Dave on 18/10/23.
 //
 
 import UIKit
@@ -33,14 +33,17 @@ class LoginViewController: UIViewController {
     
     @IBAction private func didTapOnSignIn() {
         guard let email = textEmail.text , let password = textPassword.text else { return  }
-        if ValidateClass.isValidEmail(for: textEmail.text ?? "") {
+        if email.isEmpty {
             self.alertPresent(withTitle: "Invalid Email", message: "Please enter valid email")
-        } else if ValidateClass.isPasswordValid(for: textPassword.text ?? "") {
+        } else if password.isEmpty {
             self.alertPresent(withTitle: "Invalid Password", message: "Please enter valid password")
         } else {
+            showLoader()
             viewModel.login(email: email, password: password) {
+                self.hideLoader()
                 self.moveToHome()
             } failure: {
+                self.hideLoader()
                 self.alertPresent(withTitle: "Opps..", message: "Invalid email or password")
             }
         }

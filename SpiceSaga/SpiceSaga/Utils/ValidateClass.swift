@@ -11,21 +11,19 @@ class ValidateClass {
     
     static func isValidEmail(for email: String) -> Bool {
         let email = email.trimmingCharacters(in: .whitespacesAndNewlines)
-        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.{1}[A-Za-z]{2,64}"
+        let emailRegEx = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,}"
         let emailPred = NSPredicate(format: "SELF MATCHES %@", emailRegEx)
         return emailPred.evaluate(with: email)
     }
     
     static func isValidUsername(for username: String) -> Bool {
         let username = username.trimmingCharacters(in: .whitespacesAndNewlines)
-        let usernameRegEx = "\\w{4,24}"
-        let usernamePred = NSPredicate(format: "SELF MATCHES %@", usernameRegEx)
-        return usernamePred.evaluate(with: username)
+        return !username.isEmpty
     }
     
     static func isPasswordValid(for password: String) -> Bool {
         let password = password.trimmingCharacters(in: .whitespacesAndNewlines)
-        let passwordRegEx = "^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$#!%*?&]).{6,32}$"
+        let passwordRegEx = "^(?=.*[a-z])(?=.*[$@$#!%*?&])[A-Za-z\\d$@$#!%*?&]{8,}"
         let passwordPred = NSPredicate(format: "SELF MATCHES %@", passwordRegEx)
         return passwordPred.evaluate(with: password)
     }
@@ -37,4 +35,8 @@ class ValidateClass {
         return countryPred.evaluate(with: country)
     }
     
+    static func isEmpty(for field: String) -> Bool {
+        let checkEmpty = field.trimmingCharacters(in: .whitespacesAndNewlines)
+        return checkEmpty.isEmpty
+    }
 }

@@ -39,6 +39,12 @@
                                 <color key="textColor" name="AppTint"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aVE-C2-Rcs">
+                                <rect key="frame" x="72" y="38" width="29.333333333333329" height="16.666666666666671"/>
+                                <fontDescription key="fontDescription" name="Avenir-Book" family="Avenir" pointSize="12"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
@@ -79,6 +85,8 @@
                     <constraint firstItem="9Wv-yq-MhI" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="Yus-Wl-yH4"/>
                     <constraint firstItem="5lU-qk-j8P" firstAttribute="leading" secondItem="9xa-2g-zru" secondAttribute="trailing" constant="16" id="chf-i5-qtF"/>
                     <constraint firstAttribute="trailing" secondItem="9Wv-yq-MhI" secondAttribute="trailing" id="d6T-la-iZ8"/>
+                    <constraint firstItem="aVE-C2-Rcs" firstAttribute="leading" secondItem="5lU-qk-j8P" secondAttribute="leading" id="eg7-Tu-Qd9"/>
+                    <constraint firstItem="aVE-C2-Rcs" firstAttribute="top" secondItem="5lU-qk-j8P" secondAttribute="bottom" id="ggD-iS-uXd"/>
                     <constraint firstItem="9Wv-yq-MhI" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="mir-kg-4Kq"/>
                     <constraint firstItem="HNs-vJ-wPn" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ub7-az-DHO"/>
                     <constraint firstItem="HNs-vJ-wPn" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="wuX-cu-a3h"/>
@@ -89,6 +97,7 @@
             <connections>
                 <outlet property="imageViewRecipeThumb" destination="9Wv-yq-MhI" id="c4x-Du-2Hf"/>
                 <outlet property="imageViewUserProfile" destination="9xa-2g-zru" id="CaQ-ix-CSR"/>
+                <outlet property="labelCountry" destination="aVE-C2-Rcs" id="xzf-EW-Qj2"/>
                 <outlet property="labelRecipeName" destination="f9n-v4-vAp" id="9ey-Az-dvh"/>
                 <outlet property="labelRecipeType" destination="rr3-p6-rnD" id="fPR-F5-zLN"/>
                 <outlet property="labelUserName" destination="5lU-qk-j8P" id="FJJ-bE-mFm"/>
